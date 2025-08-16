@@ -1,0 +1,17 @@
+<!--pages/test/test.wxml-->
+<view class = "box">
+<text>详情</text>
+</view>
+<view class="device-info">
+  <text>设备信息</text>
+  <text>设备ID: doGmW1q6l4</text>
+  <text>设备编码: iot12</text>
+  <text>设备别名: 测试设备</text>
+  <text>所属分组: 厂区A</text>
+  <text>所属产品: 测试产品1</text>
+  <text>设备类型: 直连设备</text>
+  <text>创建时间: 2024-11-24T12:45:48Z</text>
+  <text>设备说明: 该设备为控制器该设备为控制器该</text>
+  <text>MQTT认证配置</text>
+  <text>AuthToken: OWM4ZGJOYWUTNWM2NS02NTY1L OWM4ZGJOYWUTNWM2NS0</text>
+</view>

@@ -1,0 +1,16 @@
+.box {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  height: 50px;
+  width: 100%;
+  background-color: aquamarine;
+}
+.test {
+
+  margin: 0 auto;
+}
+.device-info {
+  display: flex;
+  flex-direction: column;
+}
