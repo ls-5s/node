@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 设置字符编码为 UTF-8，确保页面能正确显示各种字符 -->
+    <meta charset="UTF-8">
+    <!-- 设置视口，让页面在不同设备上能自适应显示 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 设置页面标题 -->
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 创建一个文件上传输入框，类名为 upload -->
+    <input type="file" class='upload'>
+    <!-- 创建一个图片元素，用于显示上传后的图片，初始 src 为空 -->
+    <img src="" alt="">
+    <!-- 引入 axios 库，用于发送 HTTP 请求 -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        // 为文件上传输入框添加 change 事件监听器，当用户选择文件时触发
+        document.querySelector('.upload').addEventListener('change', e => {
+            // 打印用户选择的第一个文件对象，方便调试查看文件信息
+            console.log(e.target.files[0]);
+
+            // 创建一个 FormData 对象，用于将文件数据以表单形式发送到服务器
+            const fd = new FormData();
+
+            // 向 FormData 对象中添加一个名为 'img' 的字段，值为用户选择的第一个文件
+            fd.append('img', e.target.files[0]);
+
+            // 使用 axios 发送一个 POST 请求到指定的上传图片的 API 接口
+            axios({
+                // 请求的 URL
+                url: 'http://hmajax.itheima.net/api/uploadimg',
+                // 请求方法为 POST，用于向服务器提交数据
+                method: 'POST',
+                // 请求的数据，即包含文件的 FormData 对象
+                data: fd
+            })
+                .then(result => {
+                    // 当请求成功时，打印服务器返回的结果，方便调试查看返回的数据结构
+                    console.log(result);
+
+                    // 从服务器返回的数据中提取图片的 URL
+                    const iurl = result.data.data.url;
+
+                    // 将提取到的图片 URL 赋值给页面上的 img 元素的 src 属性，从而显示上传后的图片
+                    document.querySelector('img').src = iurl;
+                });
+        });
+    </script>
+</body>
+
+</html>

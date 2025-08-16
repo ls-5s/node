@@ -1,0 +1,309 @@
+<script>
+    // 差值表达式{{}}
+    // 作用利用表达式进行差值，渲染到页面中
+    // 表达式 是可以被求值的代码，Js引擎会将计算出的一个结构
+    // <h3>{{ title }}</h3>
+    //  <p>{{ nickname.toUpperCase() }}</p>
+    //   <p>{{ age >= 18 ? '成年人' : '未成年人' }}</p>
+    //   <p>{{ obj.name }}</p>
+    // 注意: 使用的数据必须存在(data)
+    // 支持表达式,不是if for....
+    // 不可以在标签属性中使用{{}} 插值    <p title="{{name}}">hhh</p>
+
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='app'>
+        <div v-html="msg"></div>
+        <div v-show="a">hhhhh</div>
+        <div v-if="a">hhhhh</div>
+        <p v-if="gender === 1">性别：♂ 男</p>
+        <p v-else>性别：♀ 女</p>
+        <p v-if="score >= 90">成绩评定A：奖励电脑一台</p>
+        <p v-else-if="score>= 80">成绩评定B：奖励周末郊游</p>
+        <p v-else-if="score>= 70">成绩评定C：奖励零食礼包</p>
+        <p v-else-if="score>= 50">成绩评定D：惩罚一周不能玩手机</p>
+        <button v-on:click="count--">-</button>
+        <span>{{count}}</span>
+        <button @mouseenter="count++">+</button><br>
+        <button @click='fu'>切换</button>
+        <p v-show='gender'>今天5/14</p>
+        <p v-bind:title='s'>111</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                msg: `  <a href="https://www.doubao.com/chat/5114878613005570">Ai</a>`,
+                a: false,
+                gender: true,
+                score: 70,
+                count: 1000,
+                s: "red"
+            },
+            methods: {
+                fu() {
+                    this.gender = !this.gender
+                    // 让提供的所有methods中的函数，this都指向当前实例
+                }
+            }
+        })
+        // data中的数据，是会被添加到实例上
+        // 访问数据 属性。属性名 app.msg
+        // 修改数据 实例。属性名  app.msg = "hhhh"
+        // Vue指令
+        // v -前缀 的特殊属性 不同的属性对应不同的作用
+        // 学习不同的指令 解决不同的需求
+        // v-html= '表达式' 动态设计元素innerHTML
+        // v-show 控制元素显示隐藏 表达式true 显示 false 隐藏
+        //v-show = '表达式'
+        // 它是切换 css 的display:none 来控制显示隐藏
+        // 使用场景：频繁切换显示隐藏场景
+        // v-if 控制元素显示隐藏(条件渲染)表达式true 显示 false 隐藏
+        // v-if  = '表达式'
+        // 它是根据判断条件 控制元素的创建和移除
+        //使用场景要么显示，要么影藏，不频繁切换显示隐藏场景
+        // v-else 语法 v-else
+        // v-else-if 语法 v-else-if = '表达式'
+        // v-on 作用: 注册事件 = 添加监听 + 提供处理逻辑
+        // 语法 v-on:事件名 = "内联语句 "v-on:click="count--"
+        //可以改成@click="count--"
+        // 语法 v-on:事件名 = "methods中的函数名"
+        // v-on 调用传参
+        // v-bind
+        //         借助v - bind，能够把表达式的值动态地绑定到 HTML 特性或者组件 prop 上。
+        //         它的缩写形式: 让代码更为简洁。
+        // 可以使用对象语法绑定多个 class 或者 style 值。
+        //         支持动态特性名，能在运行时确定绑定的特性。
+        // 绑定组件 prop 时，要保证子组件已声明该 prop。
+        // 作用： 动态的设置html的标签属性 -> src url title
+        // 语法：v-bind:属性名 = “表达式” 可以简写为 :属性名 = “表达式”
+        // v-for 数据循环 多次渲染整个元素 数组 对象 数字
+        //   2. 遍历数组语法：
+        //   v -for = "(item, index) in 数组"
+        // ➢ item 每一项， index 下标
+        // key作用：
+        // 给元素添加的唯一标识，便于Vue进行列表项的正确排序复用。
+
+        // 注意点：
+        // 1. key的值只能是字符串或数字类型
+        // 2. key的值必须具有唯一性
+        // 3. 推荐使用id作为key（唯一），不推荐使用index作为key（会变化，不对应）
+        // < li v-for= "(item,index) in booksList" : key = "item.id" >
+        // v-model 语法  v-model = "表达式"
+        // 作用：给表单元素使用，双向数据绑定 -> 可以快速获取 或 设置 表单元素内容
+
+    </script>
+</body>
+
+<script>
+    // 指令修饰符号
+    // @keyup.enter -> 监听键盘回车事件
+    // v-model.number 转数字
+    // v-model.trim 去掉收尾空格
+    // < h3 > @事件名.prevent  →  阻止默认行为</>
+    // < h3 > @事件名.stop     →  阻止冒泡</>
+    // v - bind 对于样式控制的增强 - 操作class
+    // :class = "对象/数组"
+    // 对象 -> 键就是类名，值是布尔值 如果值为true ,有这个类 否则没有
+    // < div class="box" : class="{ pink: true, big: true }" > 黑马程序员</ >
+    // 数组 -> 数组中所以的类，都会添加到盒子上，本质就是一个class列表
+    // < div class="box" : class="['pink', 'big']" > 黑马程序员</ >
+    // v - bind 对于样式控制的增强 - 操作style
+    // :style  = "对象/数组"(对于某个属性的动态设置)
+    // < div class='box' : style = "{ width:'500px',height:'700px',backgroundColor: 'red' }" ></ >
+    // v-model 应用于其他表达元素
+    // 常用的表达元素都可以使用v-model绑定关联 -> 快速 获取 或者 设置 表单元素值
+    // 他会根据 控制类型 自动选取 正确的方法来更新元素
+
+    //  前置理解：
+    // 1. name:  给单选框加上 name 属性 可以分组 → 同一组互相会互斥
+    // 2. value: 给单选框加上 value 属性，用于提交给后台的数据
+    //    结合 Vue 使用 → v - model
+    // 性别:
+    // <input v-model="gender" type="radio" name="gender" value="1">男
+    //  <input v-model="gender" type="radio" name="gender" value="2">女
+    // 前置理解：
+    // 1. option 需要设置 value 值，提交给后台
+    // 2. select 的 value 值，关联了选中的 option 的 value 值
+    // 结合 Vue 使用 → v - model
+    // <select v - model="cityId" >
+    // <option value="101">北京</option>
+    // <option value="102">上海</option>
+    // <option value="103">成都</option>
+    // <option value="104">南京</option>
+    //    </select>
+    // 计算属性在现在的数据，计算出来的新属性，依赖数据的变化，自动重新计算
+    // 语法 声明在computed 配置中，一个计算对应一个函数
+    // 使用起来和普通属性一样使用{{计算属性名}}
+    // computed: {
+    //     计算属性名() {
+    //         基于现有数据，编写求值逻辑
+    //         return 结果
+    //     }
+    // },
+    //     < p > 礼物总数：{{ sum }} 个</ >
+    //         computed: {
+    //     sum() {
+    //         let x = this.list.reduce((sum, item) => {
+
+    //             return sum + item.num
+    //         }, 0)
+    //         return x
+    //     }
+    // }
+    // computed计算属性和 methods 方法
+    // computed 作用：封装了一段对于数据的处理，算一个结果
+    // 缓存特性(提高性能)计算属性会对应计算出来的结果缓存，再次使用
+    // 再次使用直接读取缓存，依赖的变化了，会自动重新计算 ->再次合并
+    //methods 给实例提供一个方法，调用以处理业务逻辑
+    // 计算属性的完整写法
+    // methods: {
+    //     // 修改计算属性 sum 的值，触发其 set 方法
+    //     useNameCard() {
+    //         this.sum = "李欢";
+    //     }
+    // },
+    // computed: {
+    //     // 计算属性 sum 的完整写法（包含 get 和 set）
+    //     sum: {
+    //         // 当模板中使用 {{ sum }} 时自动调用
+    //         get() {
+    //             // 将姓和名拼接为完整姓名
+    //             return this.name + this.ming;
+    //         },
+
+    //         // 当直接给 sum 赋值时触发（如 this.sum = "张三"）
+    //         set(value) {
+    // 将传入的完整姓名拆分为姓和名
+    // 例如：value = "张三" → name = "张", ming = "三"
+    // this.name = value.slice(0, 1);  // 截取第一个字符作为姓
+    // this.ming = value.slice(1);     // 截取剩余字符作为名
+
+    // 注意：修改 name 和 ming 会触发 sum 的 get 方法重新计算
+    //         }
+    //     }
+    // }
+    // watch监听器
+    // 作用 监视数据的变化,执行一些业务逻辑或者异步操作
+    // 语法：简单写法 -> 简单类型数据，直接监视
+    // data: {
+    //     // words: ''
+    //     obj: {
+    //         words: ''
+    //     }
+    // },
+    // // 具体讲解：(1) watch语法 (2) 具体业务实现
+    // watch: {
+    //     // 该方法会在数据变化时调用执行
+    //     // newValue新值, oldValue老值（一般不用）
+    //     // words (newValue) {
+    //     //   console.log('变化了', newValue)
+    //     // }
+
+    //     'obj.words'(newValue) {
+    //         console.log('变化了', newValue)
+    //     }
+    // }
+    // watch: {
+
+    //     // 'obj.words'(newValue, oldValue) {
+    //     //     console.log('变化了', newValue, oldValue)
+    //     //     clearTimeout(this.timer)
+    //     //     this.timer = setTimeout(async () => {
+    //     //         const res = await axios({
+    //     //             url: 'https://applet-base-api-t.itheima.net/api/translate',
+    //     //             params: {
+    //     //                 words: newValue,
+    //     //             }
+    //     //         })
+    //     //         this.result = res.data.data
+    //     //     }, 300)
+
+    //     // }
+
+    // })
+    // 完整写法 -> 添加额外配置
+    // deep:true 对象复杂类型深度监视
+    // immediate:true 初始化立刻执行一次handler方法
+    // watch: {
+    //     watch: {
+    //         obj: {
+    //             deep: true,
+    //                 immediate: true, // 初始化时立即执行一次
+    //                     handler(newValue) {
+    //                 console.log('修改', newValue);
+    //                 clearTimeout(this.timer);
+
+    //                 // 使用箭头函数确保 this 指向 Vue 实例
+    //                 this.timer = setTimeout(async () => {
+    //                     try {
+    //                         const res = await axios({
+    //                             url: 'https://applet-base-api-t.itheima.net/api/translate',
+    //                             params: newValue // 假设 newValue 是包含 { words: '文本' } 的对象
+    //                         });
+    //                         this.result = res.data.data;
+    //                     } catch (error) {
+    //                         console.error('翻译请求失败:', error);
+    //                         this.result = '翻译失败，请重试';
+    //                     }
+    //                 }, 300);
+    //             }
+    //         }
+    //     },
+
+
+</script>
+<script>
+    // vue生命周期: 一个vue实例创建到销毁的整个过程
+    // 生命周期的四个阶段:1.创建阶段 2.挂载阶段 3.更新阶段 4.销毁阶段
+    //  // 1. 创建阶段（准备数据）
+    // beforeCreate() {
+    //     console.log('beforeCreate 响应式数据准备好之前', this.count)
+    // },
+    // created() {
+    //     console.log('created 响应式数据准备好之后', this.count)
+    //     // this.数据名 = 请求回来的数据
+    //     // 可以开始发送初始化渲染的请求了
+    // },
+
+    // // 2. 挂载阶段（渲染模板）
+    // beforeMount() {
+    //     console.log('beforeMount 模板渲染之前', document.querySelector('h3').innerHTML)
+    // },
+    // mounted() {
+    //     console.log('mounted 模板渲染之后', document.querySelector('h3').innerHTML)
+    //     // 可以开始操作dom了
+    // },
+
+    // // 3. 更新阶段(修改数据 → 更新视图)
+    // beforeUpdate() {
+    //     console.log('beforeUpdate 数据修改了，视图还没更新', document.querySelector('span').innerHTML)
+    // },
+    // updated() {
+    //     console.log('updated 数据修改了，视图已经更新', document.querySelector('span').innerHTML)
+    // },
+
+    // // 4. 卸载阶段
+    // beforeDestroy() {
+    //     console.log('beforeDestroy, 卸载前')
+    //     console.log('清除掉一些Vue以外的资源占用，定时器，延时器...')
+    // },
+    // destroyed() {
+    //     console.log('destroyed，卸载后')
+    // }
+
+</script>
+<script>
+
+</script>

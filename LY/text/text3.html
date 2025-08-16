@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 300px;
+            margin: 200px auto;
+            display: flex;
+            gap: 10px;
+            /* 添加列间距 */
+            background-color: #f0f0f0;
+            /* 容器背景色 */
+            border-radius: 8px;
+            /* 圆角 */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            /* 阴影效果 */
+        }
+
+        .l,
+        .r {
+            width: 80px;
+            /* 左右列固定宽度 */
+            display: flex;
+            justify-content: center;
+            /* 水平居中 */
+            align-items: center;
+            /* 垂直居中 */
+            background-color: #fff;
+            /* 白色背景 */
+            font-weight: bold;
+            /* 字体加粗 */
+            border-radius: 4px;
+            /* 小圆角 */
+        }
+
+        .z {
+            flex-grow: 1;
+            /* 中间列自动填充剩余空间 */
+            height: 100%;
+            overflow: hidden;
+            /* 防止图片溢出 */
+            border-radius: 4px;
+            /* 图片圆角 */
+        }
+
+        .z img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* 图片保持比例覆盖容器 */
+            transition: transform 0.3s ease;
+            /* 图片缩放过渡效果 */
+        }
+
+        .z img:hover {
+            transform: scale(1.05);
+            /* 鼠标悬停缩放效果 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="l">left</div>
+        <div class="z"><img src="img/1.jpg" alt="图片" title="图片"></div>
+        <div class="r">right</div>
+    </div>
+    <script>
+        const a = [
+            { id: 1, img: "img/1.jpg" },
+            { id: 2, img: "img/2.jpg" },
+            { id: 3, img: "img/3.jpg" },
+            { id: 4, img: "img/4.jpg" },
+        ];
+        const left = document.querySelector('.l');
+        const right = document.querySelector('.r');
+        const img = document.querySelector('.z img');
+        let i = 0;
+        let timer = null; // 声明定时器变量
+
+        // 创建自动轮播的函数（便于复用）
+        function startCarousel() {
+            timer = setInterval(() => {
+                img.src = a[i].img;
+                i = (i + 1) % a.length;
+            }, 1000); // 轮播间隔时间
+        }
+
+        // 初始化轮播
+        startCarousel();
+
+        // 鼠标悬停时暂停轮播
+        img.addEventListener('mouseenter', () => {
+            clearInterval(timer);
+        });
+
+        // 鼠标离开时恢复轮播（关键修复）
+        img.addEventListener('mouseleave', () => {
+            startCarousel();
+        });
+
+        // 左右按钮点击切换
+        left.addEventListener('click', () => {
+            clearInterval(timer); // 点击时暂停自动轮播
+            i = (i - 1 + a.length) % a.length;
+            img.src = a[i].img;
+            startCarousel(); // 重新启动轮播
+        });
+
+        right.addEventListener('click', () => {
+            clearInterval(timer);
+            i = (i + 1) % a.length;
+            img.src = a[i].img;
+            startCarousel();
+        });
+
+        // 图片加载失败处理
+        img.onerror = () => {
+            img.src = "img/error.jpg";
+            img.style.opacity = 0.5;
+        };
+
+
+        // 页面卸载时清除定时器
+        window.addEventListener('beforeunload', () => {
+            clearInterval(timer);
+        });
+    </script>
+</body>
+
+</html>

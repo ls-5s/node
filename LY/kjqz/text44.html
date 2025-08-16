@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 设置文档的字符编码为 UTF-8，确保支持各种语言字符 -->
+    <meta charset="UTF-8">
+    <!-- 为页面设置视口，让页面在不同设备上正确显示和缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 设置网页的标题 -->
+    <title>地区查询</title>
+    <!-- 引入 Bootstrap CSS 库，用于快速搭建美观的页面布局 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        /* 给页面主体添加内边距，让内容不紧贴边缘 */
+        body {
+            padding: 20px;
+        }
+
+        /* 给表单元素添加底部外边距，使其与下方内容有一定间隔 */
+        form {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 创建一个表单，用于用户输入省份和城市名称并提交查询 -->
+    <form id="queryForm">
+        <!-- 省份输入区域 -->
+        <div class="mb-3">
+            <!-- 省份输入框的标签 -->
+            <label for="province" class="form-label">省份名字</label>
+            <!-- 省份输入框，使用 Bootstrap 样式，默认值为 '北京' -->
+            <input type="text" class="form-control" id="province" placeholder="请输入省份名" value="北京">
+        </div>
+        <!-- 城市输入区域 -->
+        <div class="mb-3">
+            <!-- 城市输入框的标签 -->
+            <label for="city" class="form-label">城市名字</label>
+            <!-- 城市输入框，使用 Bootstrap 样式，默认值为 '北京市' -->
+            <input type="text" class="form-control" id="city" placeholder="请输入城市名" value="北京市">
+        </div>
+        <!-- 提交按钮，使用 Bootstrap 蓝色主按钮样式 -->
+        <button type="submit" class="btn btn-primary">查询</button>
+    </form>
+    <!-- 用于显示查询结果的无序列表，使用 Bootstrap 列表组样式 -->
+    <ul id="areaList" class="list-group"></ul>
+    <script>
+        // 获取表单元素，以便监听其提交事件
+        const form = document.getElementById('queryForm');
+        // 获取用于显示查询结果的列表元素
+        const areaList = document.getElementById('areaList');
+
+        // 为表单的提交事件添加监听器
+        form.addEventListener('submit', (event) => {
+            // 阻止表单的默认提交行为，避免页面刷新
+            event.preventDefault();
+
+            // 获取用户在省份输入框中输入的值
+            const pName = document.querySelector('#province').value;
+            // 获取用户在城市输入框中输入的值
+            const cName = document.querySelector('#city').value;
+
+            // 创建一个对象，用于存储查询参数，键名 pname 和 cname 对应后端接口所需的参数名
+            const qObj = {
+                pname: pName,
+                cname: cName
+            };
+
+            // 使用 URLSearchParams 对象将查询参数对象转换为 URL 查询字符串格式
+            const paramsObj = new URLSearchParams(qObj);
+            // 获取最终的查询字符串
+            const queryString = paramsObj.toString();
+
+            // 创建一个 XMLHttpRequest 对象，用于发起 HTTP 请求
+            const xhr = new XMLHttpRequest();
+            // 配置请求方法为 GET，并拼接完整的请求 URL，包含查询参数
+            xhr.open('GET', `http://hmajax.itheima.net/api/area?${queryString}`);
+
+            // 监听 loadend 事件，该事件在请求完成（无论成功或失败）时触发
+            xhr.addEventListener('loadend', () => {
+                // 将服务器返回的响应内容输出到控制台，方便调试查看
+                console.log(xhr.response);
+                // 尝试将服务器返回的 JSON 字符串解析为 JavaScript 对象
+                const data = JSON.parse(xhr.response);
+                // 将解析后数据中的 list 数组元素用逗号连接成字符串并输出到控制台
+                console.log(data.list.join());
+                // 获取解析后数据中的 list 数组
+                let list = data.list;
+                // 使用 map 方法遍历 list 数组，为每个元素创建一个列表项字符串
+                let theLi = list.map(areaName => `<li class="list-group-item">${areaName}</li>`).join();
+                // 将生成的列表项字符串插入到用于显示结果的列表元素中
+                document.getElementById('areaList').innerHTML = theLi;
+            });
+            // 发送 HTTP 请求到服务器
+            xhr.send();
+        });
+    </script>
+</body>
+
+</html>

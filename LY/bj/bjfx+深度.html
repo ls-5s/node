@@ -1,0 +1,104 @@
+data-的详细使用
+1. 基本概念
+在 HTML 里，你能够给元素添加以 data- 开头的自定义属性，这些属性可以用来存储与元素相关
+的额外数据。在 JavaScript 中，通过元素的 dataset 属性就能访问和修改这些自定义数据属性。
+2. 自定义数据属性的命名规则
+自定义数据属性的命名必须以 data- 开头，后面跟着自定义的名称，名称可以包含字母、数字、连字符 - 等。
+在 JavaScript 里，dataset 会把属性名中的连字符分隔的名称转换为驼峰命名法。例如，HTML 中的
+data-my-name 在 JavaScript 中通过 dataset.myName 访问。
+3.样例
+<div id="myDiv" data-user-id="123" data-user-name="John Doe">这是一个 div 元素</div>
+<script>
+    data.userId// 123
+</script>
+4. 修改自定义数据属性
+dataset 不仅能用于访问自定义数据属性，还可以修改它们的值。示例如下：
+<div id="myDiv" data-color="blue">这是一个 div 元素</div>
+<script>
+    div.dataset.color = 'red';
+</script>
+5. 检查自定义数据属性是否存在
+这里使用 'age' in div.dataset 检查 data-age 属性是否存在，
+如果存在则输出年龄信息，否则输出提示信息。
+<div id="myDiv" data-age="25">这是一个 div 元素</div>
+<script>
+    if ('age' in div.dataset) {
+        console.log(`用户年龄: ${div.dataset.age}`);
+    } else {
+        console.log('未找到年龄信息');
+    }
+</script>
+6. 删除自定义数据属性
+点击按钮后，使用 delete div.dataset.gender 删除 data-gender 属性，
+然后检查该属性是否还存在并输出相应信息。
+<div id="myDiv" data-gender="male">这是一个 div 元素</div>
+<script>
+    delete div.dataset.gender
+    if ('age' in div.dataset) {
+        console.log(`用户年龄: ${div.dataset.age}`);
+    } else {
+        console.log('未找到年龄信息');
+    }
+</script>
+
+
+classList
+1. 概述
+classList 是元素对象的一个属性，它返回一个 DOMTokenList 对象，
+该对象是一个类名的实时集合。通过 classList，你可以方便地添加、移除、
+3. 常用方法
+add() remove()
+contains()用于检查元素的类名列表中是否包含指定的类名。如果包含，返回 true；否则返回 false。
+replace()用于将元素类名列表中的一个类名替换为另一个类名。
+paragraph.classList.replace('old', 'new');
+上述代码将 p 元素的 old 类名替换为 new 类名，从而改变段落文本的颜色。
+
+
+//form-serialize插件的详细使用
+<form id="userForm">
+    <!-- 普通输入框 -->
+    <input type="text" name="username" value="Alice">
+
+    <!-- 空输入框（empty: true 时会被包含） -->
+    <input type="text" name="email" value="">
+
+    <!-- 单选按钮（选中） -->
+    <input type="radio" name="gender" value="female" checked>
+    <input type="radio" name="gender" value="male">
+
+    <!-- 复选框（选中与未选中） -->
+    <input type="checkbox" name="hobbies" value="reading" checked>
+    <input type="checkbox" name="hobbies" value="swimming">
+
+    <!-- 下拉选择框 -->
+    <select name="country">
+        <option value="">--选择国家--</option>
+        <option value="cn" selected>中国</option>
+        <option value="us">美国</option>
+    </select>
+
+    <!-- 文件上传（仅文件名会被序列化） -->
+    <input type="file" name="avatar">
+
+    <!-- 按钮（不会被序列化） -->
+    <button type="submit">提交</button>
+</form>
+
+<script src="https://cdn.jsdelivr.net/npm/form-serialize@1.0.0/dist/form-serialize.min.js"></script>
+<script>
+    const form = document.getElementById('userForm');
+
+    // 序列化表单
+    // const data = serialize(form, { hash: true, empty: true });
+    console.log(data);
+    /* 输出结果：
+    {
+      username: "Alice",
+      email: "",           // 空值被保留（empty: true）
+      gender: "female",    // 仅选中的单选按钮
+      hobbies: ["reading"],// 仅选中的复选框
+      country: "cn",
+      avatar: ""           // 文件上传字段（未选择文件时为空）
+    }
+    */
+</script>

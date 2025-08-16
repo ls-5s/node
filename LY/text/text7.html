@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        axios.defaults.baseURL = 'http://big-event-vue-api-t.itheima.net'
+        const app = new Vue({
+            el: '#app',
+            data() {
+                return {
+                    msg: 'liyan133',
+
+                }
+            },
+            async created() {
+                try {
+                    const res = await axios.post('/api/reg', {
+                        "username": this.msg,
+                        "password": "111111",
+                        "repassword": "111111"
+                    })
+                    console.log(res.data);
+                } catch (error) {
+                    console.error('注册请求失败:', error);
+                    // 这里可以添加错误处理逻辑，比如提示用户
+                }
+            },
+
+            methods: {
+                change() {
+                    const ss = this.$refs.box
+                    ss.style.backgroundColor = 'blue'
+                    ss.innerText = "qqqq"
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>

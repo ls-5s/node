@@ -1,0 +1,1523 @@
+<!-- 
+<!DOCTYPE html>
+声明文档类型为 HTML5。
+<html lang="en">
+定义 HTML 文档的根元素，并指定文档的语言为英语（lang="en"）。
+<head>
+开始定义文档的头部，包含元数据和其他信息。
+<meta charset="UTF-8">
+指定文档的字符编码为 UTF-8。
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+设置视口的宽度等于设备的宽度，并将初始缩放级别设置为 1.0。这对于响应式设计很重要。
+<title>Document</title>
+定义文档的标题，在浏览器标签栏中显示。
+</head>
+结束头部定义。
+
+<body>
+开始定义文档的主体内容。
+<h1>disifgvnjkv</h1>
+<h1> 标签表示最高级别的标题，通常用于页面的主标题。
+<h2>fgkdlke</h2>
+<h2> 标签表示第二级别的标题，通常用于主要章节标题。
+<h3>msdfikvbvgszf</h3>
+<h3> 标签表示第三级别的标题，通常用于次级章节标题。
+fdsklsmgma nmb
+文档主体中的普通文本内容。
+</body>
+结束主体内容定义。
+</html>
+
+结束 HTML 文档。
+-->
+<!--
+<img src="11.JPG"/> 是一个 HTML 标签，用于在网页上嵌入图像。以下是该标签的详细解释：
+<img>：这是图像标签，用于在网页中插入图像。
+src="11.JPG"：这是图像的来源属性 (source)，指定图像文件的路径。在这个例子中，图像文件名为 11.JPG，假设它位于与 HTML 文件相同的目录中。
+这个标签会在网页上显示名为 11.JPG 的图像文件
+-->
+<!--
+<!doctype html>
+<html lang = "en">
+    <head>
+         <title>ACM</title>
+    </head>
+    <body>
+        <h1>ACM前端</h1>
+        <img src = "11.JPG" />
+        <h1>图片显示不了，变成了文字</h1>
+        <img src="1.JPG" alt="redojisgm" />
+        
+        <h1>鼠标放在图片上，显示文字</h1>
+        <img src="11.JPG" title="redojisgm" />
+        <h1>长 宽</h1>
+        <img src="11.JPG" width = "1400" height = "1400"/>
+        <h1>边框</h1>
+        <img src="11.JPG" width="1400" height="1400" border = "14" />
+        
+    </body>
+
+</html>
+-->
+<!--
+<strong>1111</strong>：将文本 "1111" 加粗。
+<em>11111</em>：将文本 "11111" 斜体显示，表示强调。
+<del>11111</del>：将文本 "11111" 显示为删除线，表示被删除的内容。
+<ins>11111</ins>：将文本 "11111" 下划线，表示插入的内容。
+<div>22222</div>：这是一个 div 元素，它是一个块级元素，包含文本 "22222"。
+块级元素通常占据其父容器的整个宽度，并且会在前后产生换行。一行一共div
+<span>2222</span>：这是一个 span 元素，它是一个内联元素，一行多个span
+包含文本 "2222"。内联元素不会在前后产生换行，只会占据其内容所需的宽度。
+
+相对路径图片 本级 <img scr = "11.JPG" />
+下级 <img scr = "imager/11.JPG" />
+上一级 <img scr = "../11.JPG" />
+
+绝对路径图片 <img scr = "D:\VVS\imager\11.JPG" />格式
+也可以是网上的路径的图片
+<img src="https://pic-1301573324.cos.ap-chengdu.myqcloud.com/20240724122526.png" width="140" hight="140" border="14" />
+
+超链接 <a href = "https://www.bilibili.com/?spm_id_from=333.1391.0.0">哔站</a>
+<a> 标签：(外部链接)
+    用于创建超链接。
+    href 属性：
+    href="https://www.bilibili.com/?spm_id_from=333.1391.0.0"：指定链接目标的URL。在这个例子中，链接指向哔哩哔哩网站。
+    链接文本：
+    哔站：这是用户点击的文本。当用户点击这个文本时，会导航到 href 属性指定的URL。
+    target 属性：
+    target="_self"：指定链接在当前窗口中打开。在这个例子中，链接会在当前窗口中打开。
+    target="_blank"：指定链接在新窗口中打开。在这个例子中，链接会在新窗口中打开。
+    <a href="https://www.qq.com" target="_self">腾讯</a>
+
+    <a> 标签：(内部链接)
+    
+        用于创建超链接。
+        href 属性：
+        href="text.html"：指定链接目标的URL。在这个例子中，链接指向一个名为 text.html 的文件。
+        这是一个相对路径，表示 text.html 文件位于与当前HTML文件相同的目录中。
+        链接文本：
+        内部：这是用户点击的文本。当用户点击这个文本时，浏览器会导航到 href 属性指定的 text.html 文件。
+        <a href="text.html">内部</a>
+
+        <a href="#">fff</a>空链接
+
+        <h1>下载链接：地址链接是文件.exe 或者是zip 等压缩包</h1>
+        <a href="imager/11.zip ">下载</a>
+
+        网页文件的链接：文本，图像，表格，音频，视频等
+        <a href="https://www.qq.com"><img src="imager/11.JPG"></a>图片链接
+
+        <h1>锚点链接：</h1>
+        <a href="#top">返回顶部</a>
+        <h1 id="top">返回顶部</h1>
+        <h1>锚点链接：</h1>：
+        <h1> 标签表示最高级别的标题，包含文本“锚点链接：”。
+        <a href="#top">返回顶部</a>
+        <a> 标签用于创建超链接。
+        href="#top"：指定链接目标为页面内的一个锚点，锚点的ID为 top。
+        返回顶部：这是用户点击的文本。当用户点击这个链接时，浏览器会滚动到ID为 top 的元素位置。
+        <h1 id="top">返回顶部</h1>：
+        <h1> 标签表示最高级别的标题，包含文本“返回顶部”。
+        id="top"：为这个标题元素设置一个ID，值为 top。这个ID用于标识页面中的一个位置，供锚点链接跳转
+
+        <h1>注释标签和特殊字符</h1>笔记本上
+        空是&nbsp <是&it   >是&gt
+
+        <table> 标签
+            用于定义一个表格。
+        <tr> 标签
+            用于定义表格中的一行。
+        <td> 标签
+        <th> 标签
+            用途：定义表格中的表头单元格。
+            显示效果：表头单元格的文本通常显示为加粗且居中
+
+        <table> 标签：
+        
+            用于定义一个表格。
+            所有表格内容都包含在 <table> 标签内。
+                align 属性：
+        
+                align="center"：将表格居中对齐。
+                border 属性：
+        
+                border="1"：设置表格边框宽度为1像素。
+                width 属性：
+        
+                width="500"：设置表格宽度为500像素。
+                height 属性：
+        
+                height="500"：设置表格高度为500像素。
+                cellpadding 属性：
+        
+                cellpadding="10"：设置单元格内容与单元格边框之间的空白为10像素。
+                cellspacing 属性：
+        
+                cellspacing="5"：设置单元格之间的空白为5像素。
+                注意事项
+
+        <thead> 标签(表格结构标签)
+            用途：定义表格的表头部分。
+            容：通常包含一个或多个 <tr> 标签，这些
+            <tr> 标签包含 <th> 标签，用于定义表头单元格。
+        <tbody> 标签
+        用途：定义表格的主体部分。
+        内容：通常包含一个或多个 <tr> 标签，这些
+        <tr> 标签包含 <td> 标签，用于定义表格数据单元格。
+
+        <h2>合并单元格方法</h2>
+        colspan 属性：
+        rowspan 属性：
+        用途：定义单元格跨越的列数。
+        用途：定义单元格跨越的行数。
+        注意事项：合并单元格时，需要确保合并的单元格在同一行或同一列中。
+        格式：<th colspan="2" rowspan="2">排名</th>、
+        解释：这个单元格跨越了2列，且跨越了2行。
+        怎么用步骤
+        1. 找到需要合并的单元格。
+        2. 使用 colspan 或 rowspan 属性定义单元格跨越的列数或行数。
+        3. 在合并的单元格中填写内容。
+        4.删除多余的
+
+        无序例表
+        <ul> 标签：
+        
+            定义一个无序列表（unordered list）。
+            列表项通常以圆点（或其他样式的项目符号）开头。
+            <li> 标签：
+        
+                定义列表中的一个项目（list item）。
+                每个
+            <li> 标签表示列表中的一个项目。
+            <ul>
+                <li>(ul)里面只能放li</li>
+                <li>苹果</li>
+                <li>li里面放<br>什么元素都可以</li>
+            </ul>
+           
+            <ol> 有序列表签：其他的和无序列表一样   
+
+            <dl> 自定义列表标签
+            用途：定义一个自定义列表（description list）。
+            定义：自定义列表包含一系列术语及其对应的描述。
+            <dt> 标签：
+                用于定义自定义列表中的术语（term）。
+                术语通常显示为加粗文本。
+            <dd> 标签：           
+                用于定义自定义列表中术语的描述（description）。
+                描述通常显示为普通文本。         
+                
+             <form> 标签：
+                    用于定义一个HTML表单。
+                    表单用于收集用户输入的数据，并将这些数据提交到服务器进行处理。
+            </form> 标签：
+                结束表单的定义。
+
+            总结知识点：<input> 标签的 type 属性
+            格式：<input type="text">   
+            1. button
+            作用：定义可点击按钮，通常通过 JavaScript 触发交互逻辑。
+            注意：需结合事件监听（如 onclick）实现功能，与 submit 和 reset 不同，不直接关联表单提交或重置。
+            2. checkbox
+            作用：定义复选框，允许用户选择多个选项。
+            注意：同一组的复选框应使用相同的 name 属性，值通过 value 属性传递。
+            3. file
+            作用：允许用户上传文件，显示为输入框和“浏览”按钮。
+            注意：需设置表单的 enctype="multipart/form-data" 以支持文件传输。
+            4. hidden
+            作用：定义隐藏字段，用于在表单中传递不可见数据（如用户 ID）。
+            注意：数据对用户不可见，但可通过浏览器开发者工具修改，需后端验证安全性。
+            5. image
+            作用：用图片替代提交按钮，点击后提交表单数据。
+            注意：需指定 src 属性（图片路径），功能与 submit 相同。
+            6. password
+            作用：定义密码输入框，输入内容以掩码（如圆点或星号）显示。
+            注意：仅前端掩码，传输时需通过 HTTPS 等协议保证安全性。
+            7. radio
+            作用：定义单选按钮，同一组中只能选择一个选项。
+            注意：同一组的单选按钮需设置相同的 name 属性，通过 value 区分选项
+            8. reset
+            作用：重置按钮，点击后清空表单中所有输入内容。
+            注意：谨慎使用，可能因误操作导致用户输入数据丢失。
+            9. submit
+            作用：提交按钮，点击后将表单数据发送到服务器。
+            注意：表单需指定 action（提交地址）和 method（提交方式，如 GET/POST）。
+            10. text
+            作用：单行文本输入框，默认宽度为 20 字符。
+            注意：可通过 maxlength 限制输入长度，placeholder 添加提示文本。
+            <form action="111" method="post">
+                <h1>表单元素</h1>
+                用户名:<input type="text" name="user name" value="请输入姓名" maxlength="6"><br>
+                QQ:<input type="text" maxlength="14"><br>
+                密码:<input type="password"><br>
+                性别: 男<input type="radio" name="sex" value="男" checked="checked">人妖<input type="radio" name="sex">太监<input
+                type="radio" name="sex">女<input type="radio" name="sex"><br>
+                爱好: <input type="checkbox" checked="checked">篮球<input type="checkbox">足球<input type="checkbox">乒<br>
+                <input type = "button" value = "获取短信验证码"><br>
+                <input type = "submit" value = "免费注册"><br>
+                <input type = "reset" value = "重新填写"><br>
+            
+            </form>
+
+            总结知识点：<input> 标签的常用属性
+            1. name 性别: 男<input type="radio" name="sex">
+            作用：定义表单元素的名称，用于标识表单数据（键值对中的“键”）。
+            属性值：自定义（需符合命名规范，如无空格）。
+            注意：
+            表单提交时，后端通过 name 属性获取数据。
+            同一组的单选按钮（radio）或复选框（checkbox）需设置相同的 name 以实现分组。
+            2. value
+            作用：设置表单元素的默认值或提交值。
+            属性值：自定义（根据输入类型不同，意义不同）。
+            示例：
+            文本输入框：<input type="text" name="username" value="默认用户名">
+            按钮：<input type="submit" value="提交">
+            注意：对于 checkbox 和 radio，value 是提交到服务器的实际值。
+            3. checked
+            作用：设置复选框（checkbox）或单选按钮（radio）在页面加载时默认选中。
+            属性值：布尔属性（只需写属性名，无需赋值）。
+            示例：<input type="checkbox" name="agree" checked> 同意协议
+            注意：
+            仅适用于 checkbox 和 radio 类型。
+            动态操作可通过 JavaScript 修改选中状态。
+            4. maxlength
+            作用：限制输入字段允许的最大字符数。
+            属性值：正整数（如 maxlength="10"）。
+            示例：<input type="text" name="phone" maxlength="11">
+            注意：
+            仅对文本类输入（如 text、password、textarea）有效。
+            前端限制可被绕过（如开发者工具），需后端二次验证输入长度。
+
+            action 属性
+            作用：指定表单数据提交后发送到的服务器端处理程序的 URL 或路径。
+
+            method 属性
+            作用：定义表单数据提交的 HTTP 方法，常见值为 get 和 post。
+
+            label 标签
+            通过 for 属性关联：
+            for 属性的值应与表单控件的 id 属性值相同。
+            这种方式将标签文本与相应的表单控件关联起来。
+            嵌套方式：
+            将表单控件嵌套在 <label> 标签内。
+             这种方式也可以将标签文本与相应的表单控件关联起来。
+             格式:
+
+            <select> 标签：
+                用于创建一个下拉列表。
+                下拉列表允许用户从预定义的选项中选择一个值。
+                <option> 标签：
+                用于定义下拉列表中的一个选项。 每个
+                <option> 标签表示下拉列表中的一个选项。
+                <option selected="selected">杭州</option>：
+                selected="selected" 属性用于预先选择该选项。
+                在这个例子中，“杭州”选项在页面加载时默认被选中。
+                籍贯:
+
+                <select>
+                    <option>北京</option>
+                    <option selected="selected">杭州</option>
+                </select>
+                
+                textarea 
+                    普通文本，用于描述接下来的文本域的用途。
+                    <textarea cols="50" rows="10">今天天气不错</textarea>：
+                    <textarea> 标签用于定义一个多行文本输入控件（文本域）。
+                    cols 属性设置文本域的宽度，以字符数为单位。在这个例子中，宽度为50个字符。
+                    rows 属性设置文本域的高度，以行数为单位。在这个例子中，高度为10行。
+                    文本域的初始内容为“今天天气不错”。
+
+        以下是你提供的CSS代码的详细解释：
+        
+        详细解释CSS
+        <style>
+            标签： 用于在HTML文档中嵌入CSS样式。 <style>标签通常放在HTML文档的 <head>部分。 
+            h1 选择器： 选择所有 <h1>元素，并应用以下样式： color: red;
+            ：将文本颜色设置为红色。 font-size: 12px;
+            ：将字体大小设置为12像素。
+        <style>
+            h1 {
+                color: red;
+                font-size: 12px;
+            }
+        
+            h2 {
+                color: blue;
+                font-size: 12px;
+            }
+        </style>
+
+        类选择器
+        语法.classname {
+        /* 样式规则 */
+        }
+        <style>
+            .red {
+                color: red;
+                font-size: 20px;
+            }
+        </style>
+        <h1 class="red">CSS 类选择器 开发中比较常用</h1>
+        <p class="red">111111</p>
+
+        <h1 class="red green">多类名的使用方法</h1>
+
+        <h1 id="a2">css id选择器</h1>
+        #a2 {
+        height: 100px;
+        width: 100px;
+        background-color: green;
+        /*背景颜色*/
+        }
+
+        <h1>通配符选择器</h1>
+        在CSS中，通配符选择器（*）用于选择文档中的所有元素。
+        通配符选择器可以应用于所有HTML元素，并对它们设置统一的样式。
+        * {
+        /* 样式规则 */
+        }
+
+        font-family字体系列</h1>
+        在CSS中，font-family 属性用于指定元素的字体系列。
+        你可以为一个元素指定多个字体系列，
+        浏览器会按照顺序依次尝试使用这些字体，
+        直到找到一个可用的字体。
+        语法
+        h1 {
+        font-family:'Microsoft YaHei';
+        font-family:'Courier New', Courier, monospace
+        /*背景颜色*/
+        }
+        
+        <h1>font-size字体大小 格式font-size:20px;</h1>同上都在sytle里面
+
+        <h1>font-weight字体粗细 格式 font-weight:600</h1>同上都在sytle里面
+
+        normal：正常字体样式（默认值）。
+        italic：斜体字体样式。
+        oblique：倾斜字体样式。
+        示例代码font-style字体样式 格式font-style:italic;
+
+        <h1>font的复合用法</h1>
+        h1 {
+        /*font-style font-weight font-size font-family */
+        font : italic 1200 77px "Microsoft YaHei";
+        }
+
+        <h1>css文本属性 文本颜色</h1>
+        h1 {
+        color: #00b542;
+        color:red;
+        color: rgb(120, 18, 66);
+        }
+
+        <h1>css文本属性 对齐文本</h1>
+        <style>
+            h1 {
+                text-align: center;
+                text-align: left;
+                text-align: right;
+            }
+        </style>
+
+        <h1>css文本属性 装饰文本</h1>
+        <style>
+            div {
+                text-decoration: underline;
+                text-decoration: overline;
+                text-decoration: line-through;
+                text-decoration：none;取消下划线、
+            }
+        </style>
+
+        <h1>css文本属性 文本缩进</h1>
+        p {
+            text-indent:4em;
+        }
+
+        <h1 style="color:aqua;font-family: 'Microsoft YaHei';">css行内样式</h1>
+
+        <h1>css外部样式表常用</h1>
+        <link rel="stylesheet" href="style.css">
+
+        <h1>emmet语法快速生成html</h1>
+        div + tab 生成div
+        div*10 + tab 生成10个div
+        : div>a + tab = <div><a href=""></a></div>
+        div+p = <div></div>
+        <p></p>
+        p.1 = <p class="1"></p>
+        p#1 = <p id="1"></p>
+        .aa$*5 = <div class="aa1"></div>
+        <div class="aa2"></div>
+        <div class="aa3"></div>
+        <div class="aa4"></div>
+        <div class="aa5"></div>
+        div{好好好} = <div>好好好</div>
+        div{$}*3 = <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <h1>emmet语法快速生成css</h1>
+        简写就好
+        .aa {
+        color: red;
+        <h1>emmet语法快速生成css</h1>
+        简写就好
+        c1 = color: 1px;
+        }
+
+        <h1>后代选择器</h1>
+        ul父级 li子级 改的是子级
+        ol li{
+            color: red;
+           
+        }
+        <ol>
+            <li>gggg</li>
+            <li>ggg</li>
+        </ol>
+        ol li a{
+        color: red;
+         <li><a href=""></a>gggg</li>
+
+        }
+        .na li {
+        color: 1px;
+        }
+        <ul class="na">
+            <li>ggggg</li>
+            <li>gggg</li>
+            <li>ggg</li>
+        </ul>
+
+        子选择器，只可以选儿子这一级
+        格式 ul > li
+
+        <h1>并选择器</h1> 格式 div,p
+        <p>11111111111</p>
+        <div>1111111</div>
+        <ol>
+            <li>kdfkk</li>
+        </ol>
+        p,(格式要求)
+        div,
+        ol li{
+        color: paleturquoise;
+        }
+
+        <style> 要按照link visited  hover action的顺序来写
+            <h1>伪类选择器</h1>
+            a:link { 没有访问的链接
+                color: aqua;
+                text-decoration: none;
+            }
+        
+            a:visited {访问过的链接
+                color: #17b862;
+            }
+        
+            a:hover {鼠标经过的链接
+                color: red;
+            }
+        
+            a:active {鼠标按下去的链接
+                color: #000;
+            }
+        </style>
+        平时开发使用
+        a {
+            color: #000;
+        }
+        a:hover {
+            color: #c9274d;
+        }
+        足够了
+
+        <p>focus伪类选择器</p>
+        那个有光标，那个就改变
+        <input type="text">
+        input:focus {
+        background-color: #17c1c1;
+        color: #000;
+        }
+
+        <h1>块元素</h1>
+        块级元素的特点：
+        比较霸道，自己独占一行。
+        高度，宽度、外边距以及内边距都可以控制。
+        宽度默认是容器（父级宽度）的100%。
+        。是一个容器及盒子，里面可以放行内或者块级元素。
+        注意：
+        文字类的元素内不能使用块级元素
+        <p>标签主要用于存放文字，因此
+        <p>里面不能放块级元素，特别是不能放
+        <div>同理，<h1>~<h6>等都是文字类块级标签，里面也不能放其他块级元素
+
+        2.2行内元素
+        常见的行内元素有<a>、<strong>、<b>、<em>、<i>、<del>、<S>、<ins>、<u>、<span>等，其中
+        <span>标签是最典型的行内元素。有的地方也将行内元素称为内联元素。
+        行内元素的特点：
+        相邻行内元素在一行上，一行可以显示多个。 
+        高、宽直接设置是无效的。
+        默认宽度就是它本身内容的宽度。
+        行内元素只能容纳文本或其他行内元素。
+            
+        <h1>行内快元素</h1>
+        2.3 行内块元素
+        在行内元素中有几个特殊的标签——<img />、<input />、<td>，它们同时具有块元素和行内元素的特点。
+        有些资料称它们为行内块元素。
+        行内块元素的特点：
+        和邻行内元素（行内块）在一行上，但是他付之间会有空白缝隙。一行可以显示多个（行内元素特点）。
+        默认宽度就是它本身内容的宽度（行内元素特点）。
+        高度，行高、外边距以及内边距都可以控制（块级元素特点）。
+
+        <h1>显示模式的转换</h1>
+        div {
+        
+        display: inline-block;转化为行内块元素
+        display: block;把行内元素转化为块元素
+        display: inline;把行块元素转化为行元素
+        }
+
+        <h1>单行文字垂直原理 line-height: 40px; = height: 40px;</h1>
+
+        <h1>背景颜色</h1>background-color: #14ace8;
+        背景图片：background-image: url(imager/11.JPG)/none是没有;
+
+        <h1>背景平铺</h1> 
+        background-repeat:repeat-y;像y的方向
+        background-repeat:repeat-x;像x的方向
+        background-repeat:repeat;平铺
+        background-repeat:no-repeat;不平铺
+
+        <h1>背景方向</h1>
+        background-position:center top;
+        /*center top俩个值顺序可以变 如果只写一个，那个将会居中*/
+        background-position:20px 20px;更准确的位置
+        /*x距离左边的位置,y距离上面的位置*/
+        background-position:20px center;混合写（背景图片）
+        /*x距离左边的位置,y的位置就居中*/
+
+        background-attachment: fixed;scroll;
+        /*fixed背景固定，scroll背景滚动*/
+
+        background: rgba(0,0,0,0.4);或者.4也可以
+        /*透明度在0到1，越小越透明(0,0,0,透明度）*/
+
+        <style>
+            h1 {
+                color: antiquewhite;
+            }
+            h1 {
+                color: rgb(78, 183, 29);
+            }
+            div {
+                color: rgb(55, 202, 41);
+                font: 14px/1.5;
+            }
+            p {
+                font-size: 16px;
+                /*行高为16*1.5，行高的继承*/
+            }
+        </style>
+        </head>
+        <body>
+            <h1>css的三大特性之层叠性</h1>
+            样式冲突，就进原则,必须是相同的选择器
+            <div>
+                <p>dd</p>
+            </div>
+            css的三大特性之继承性，p继承了div的性质，字，颜色都可以
+            行高的继承
+            css的三大特点之优先级
+
+        </body>
+
+        <style>
+            /*复合选择器会有权重叠加的问题*/
+            /*不会进位，从左向右一次比较*/
+            /*0,0,0,1 + 0,0,0,1 = 0,0,0,2*/
+            ul li {
+                color: aqua;
+            }
+        
+            /*li的权重 0,0,0,1*/
+            li {
+                color: brown;
+            }
+        
+            /*.a1 li的权重0,0,1,0 + 0,0,0,1 = 0.0.1.1*/
+            .a1 li {
+                color: rgb(206, 128, 26);
+            }
+        </style>
+
+        <style>
+            div {
+                width: 200px;
+                height: 200px;
+                background-color: #54dcb1;
+                /*边框:宽度,样式,颜色;*/
+                border-width: 5px;
+                border-style: solid;
+                /*实线 dashed虚线 dotted点线*/
+                border-color: #3a18e1;
+                /*边框的复合写法 没有先后顺序*/
+                border: 1px solid red;
+                /*改一条边框 top bottom left right 4个方向*/
+                border-top: 1px solid aqua;
+                /*合并相邻的边款*/
+                border-collapse: collapse;
+                /*V边框与内容之间的距离 right left top bottom*/
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                padding: 10px;
+        
+            }
+        </style>
+        </head>
+        <body>
+            <h1>盒子模型</h1>
+            1.1看透网页布局的本质
+            网页布局过程：
+            1.先准备好相关的网页元素，网页元素基本都是盒子Box。
+            2.利用CSS设置好盒子样式，然后摆放到相应位置。
+            3.往盒子里面装内容.
+        
+            盒子模型的组成:边框,外边距,内边距,实际内容
+            表格的细线边框
+            边框会影响盒子的实际大小
+            内边距(padding 边框与内容之间的距离)
+            <!--
+           /*内边距简写*/
+           padding: 5px;
+           1个值，代表上下左右都有5像素内边距;
+           padding: 5px 10px;
+           2个值，代表上下内边距是5像素左右内边距是10像素；
+           padding: 5px 10px 20px;
+           3个值，代表上内边距5像素左右内边距10像素下内边距20像素；
+           padding: 5px 10px 20px 30px;
+           4个值，上是5像素右10像素下20像素左是30像素顺时针
+        
+           1.6内边距（padding）
+           当我们给盒子指定padding值之后，发生了2件事情：
+           1.内容和边框有了距离，添加了内边距。
+           2.padding影响了盒子实际大小。
+           也就是说，如果盒子已经有了宽度和高度，此时再指定内边框，会撑大盒子
+             内边距(padding不会撑开盒子的情况):
+            如果盒子本身没有指定width/height的属性,那么padding不会撑开盒子大小。
+
+            margin: 10px;
+            /*外边距格式 margin-top，有4个方向top,left,right,bottom*/
+            /*和padding一样的性质*/
+            1.7外边距典型应用
+            外边距可以让块级盒子水平居中，但是必须满足两个条件：
+            盒子必须指定了宽度（width）。
+            盒子左右的外边距都设置为auto。
+            margin:0 auto;
+            以上方法是让块级元素水平居中，
+            行内元素或者行内块元素水平居中
+            给其父元素添加text-align:center即可。
+
+            对于两个嵌套关系（父子关系）的块元素，
+            父元素有上外边距同时子元素也有上外边距，此时父元素会塌陷较大的外边距值。
+            解决方案：外边距合并
+            可以为父元素定义上边框。
+            可以为父元素定义上内边距。
+            可以为父元素添加overflow:hidden。
+
+            /*清楚内外边距 这句是我们写css的第一行代码 行内元素设置左右的内外边距*/
+            * {
+                padding: 0;
+                margin: 0;
+            }
+             li {
+         list-style: none;
+         /*去掉小圆点*/
+      }
+        <h1>圆角边框原理</h1>
+        border-radius: 150px;
+        border-radius: 10px 20px 30px 40px;
+        /*左上开始，顺时针转*/
+
+        参数值可以为数值或百分比的形式
+        如果是正方形，想要设置为一个圆，把数值修改为高度或者宽度的一半即可，或者直接写为50%
+        如果是个矩形,设置为高度的一半就可以做
+        新人福利
+        该属性是一个简写属性，可以跟四个值，分别代表左上角、右上角、右下角、左下角
+        分开写：border-top-left-radius、border-top-right-radius、border-bottom-right-radius和
+        border-bottom-left-radius
+  
+
+        CSS3中新增了盒子阴影，我们可以使用box-shadow属性为盒子添加阴影。
+        语法：
+        box-shadow: h-shadow v-shadow blur spread color inset;
+        值
+        描述
+        h-shadow
+        必需。水平阴影的位置。允许负值。
+        v-shadow
+        必需。垂直阴影的位置。允许负值。
+        blur
+        可选。模糊距离。
+        spread
+        可选。阴影的尺寸。
+        color
+        可选。阴影的颜色。请参阅CSS颜色值。
+        inset
+        可选。将外部阴影(outset)改为内部阴影。
+        注意：
+        1.默认的是外阴影(outset)，但是不可以写这个单词，否则导致阴影无效
+        2.盒子阴影不占用空间，不会影响其他盒子排列。
+        
+        text-shadow: 10px 20px 10px aqua;
+        <div>文字阴影,没有spread</div>
+
+        浮动float: left/right;
+        1.浮动
+        1.5浮动特性（重难点）
+        设置了浮动（float）的元素最重要特性：
+        1.脱离标准普通流的控制（浮）移动到指定位置（动），（俗称脱标）
+        2.浮动的盒子不再保留（float)原先的位置
+        1.5浮动特性（重难点）
+        2.如果多个盒子都设置了浮动，则它们会按照属性值一行内显示并且顶端对齐排列。
+        1.5浮动特性（重难点）
+        3.浮动元素会具有行内块元素特性。
+        任何元素都可以浮动。不管原先是什么模式的元素，添加浮动之后具有行内块元素相似的特性。
+        1.6浮动元素经常和标准流父级搭配使用
+        为了约束浮动元素位置，我们网页布局一般采取的策略是:
+        先用标准流的父元素排列上下位置，之后内部子元素采取浮动排列左右位置.符合网页布局第一准侧
+        
+        2.常见网页布局
+        2.2浮动布局注意点
+        1.浮动和标准流的父盒子搭配。
+        先用标准流的父元素排列上下位置，之后内部子元素采取浮动排列左右位置
+        2.一个元素浮动了，理论上其余的兄弟元素也要浮动。
+        一个盒子里面有多个子盒子，如果其中一个盒子浮动了，那么其他兄弟也应该浮动，以防止引起问题。
+        浮动的盒子只会影响浮动盒子后面的标准流不会影响前面的标准流.
+
+        清除浮动
+        clear: both;
+
+        3.3 清除浮动—:after 伪元素法
+        :after方式是额外标签法的升级版。也是给父元素添加
+        .clearfix:after{
+        content:"";
+        display: block;
+        height:0;
+        clear:both;
+        visibility: hidden;
+        丿
+        clearfix{
+        /*IE6、7专有
+        *
+        *zoom:1;
+        丿
+
+        日 3.清除浮动
+        3.3 清除浮动——父级添加overflow
+        可以给父级添加overflow属性，将其属性值设置为hidden、auto或scroll。
+        子不教，父之过，注意是给父元素添加代码
+        优点：代码简洁
+        缺点：无法显示溢出的部分
+
+        3.3清除浮动
+        ——双伪元素清除浮动
+        也是给给父元素添加
+        .clearfix:before,.clearfix:after{
+        content:"";
+        display:table;
+        }
+        clearfix:after {
+        clear:both;
+        }
+        clearfix {
+        zoom:1;
+        }
+        优点：代码更简洁
+        缺点：照顾低版本浏览器
+
+
+        4.1常见的图片格式
+        1.jpg图像格式：JPEG（JPG）对色彩的信息保留较好，高清，颜色较多，我们产品类的图片经常用jpg格
+        式的令
+        2. gif图像格式：GIF格式最多只能储存256色，所以通常用来显示简单图形及字体，但是可以保存透明背景
+        和动画效果，实际经常用于一些图片小动画效果.
+        3.png图像格式是一种新兴的网络图形格式，结合了GIF和JPEG的优点，具有存储形式丰富的特点，能够保
+        持透明背景.如果想要切成背景透明的图片，请选择png格式.
+        4. PSD图像格式PSD格式是Photoshop的专用格式，里面可以存放图层、通道、遮罩等多种设计稿.对我们
+        前端人员来说，最大的优点我们可以直接从上面复制文字，获得图片，还可以测量大小和距离.
+        
+        我饮醉酒点孤灯: 03-23 19:26:00
+        5.学成在线案例
+        5.4页面布局整体思路
+        为了提高网页制作的效率，布局时通常有以下的整体思路：
+        1.必须确定页面的版心（可视区），我们测量可得知。
+        2.分析页面中的行模块，以及每个行模块中的列模块。其实页面布局第一准则.
+        3.一行中的列模块经常浮动布局，先确定每个列的大小，之后确定列的位置.页面布局第二准则
+        4.制作HTML结构。我们还是遵循，先有结构，后有样式的原则。结构永远最重要.
+        
+        导航栏注意点:
+        实际开发中，我们不会直接用链接a而是用li包含链接（li+a)的做法。
+        1.li+a语义更清晰，一看这就是有条理的列表型内容。
+        2.如果直接用a，搜索引擎容易辨别为有堆砌关键字嫌疑（故意堆砌关键字容易被搜索引擎有降权的风险）
+        从而影响网站排名
+        
+        /*浮动的盒子不会有外边距合并的问题*/
+
+        CSS 定位机制
+        定位定义：通过特定方式将盒子固定在某一位置，本质是通过定位属性移动盒子的位置。
+        定位公式：
+        定位 = 定位模式 + 边偏移
+        定位模式：决定元素的定位方式（通过 position 属性设置）。
+        边偏移：通过 top、bottom、left、right 属性控制元素的最终位置。
+        定位模式分类
+        属性值 说明
+        static 静态定位（默认，元素遵循标准流）
+        relative 相对定位（相对于自身原位置偏移）
+        absolute 绝对定位（相对于最近非 static 的父级元素定位）
+        fixed 固定定位（相对于浏览器视口定位）
+        关键特性：
+        relative 不脱离文档流，absolute 和 fixed 会脱离文档流。
+        边偏移需配合非 static 的定位模式生效。
+
+        1.4 相对定位relative（重要）
+        相对定位是元素在移动位置的时候，是相对于它原来的位置来说的（自恋型）。
+        语法：
+        选择器{position:relative;}
+        相对定位的特点：（务必记住）
+        1.它是相对于自己原来的位置来移动的（移动位置的时候参照点是自己原来的位置）。
+        2.原来在标准流的位置继续占有，后面的盒子仍然以标准流的方式对待它。（不脱标，继续保留原来位置）
+        position: relative;
+        left: 100px;/right/top/bottom
+
+        # 绝对定位（absolute）
+        
+        元素移动位置时，相对于其祖先元素定位（“拼爹型”）。
+        ## 语法
+        ```css
+        选择器 {
+        position: absolute;
+        }
+        特点
+        1.无定位祖先：
+        - 若没有祖先元素，或所有祖先元素均未设置定位（`position` 属性为非 `static` 以外的值），
+        则相对于浏览器视口（Document文档）定位。
+        2. 有定位祖先：
+        - 若祖先元素设置了定位（如 `relative`、`absolute`、`fixed`），
+        则以最近一级的有定位祖先元素 为参考点移动位置。
+        ⚠️ 注意：
+        - 绝对定位元素会脱离正常文档流，可能影响其他元素的布局（原文未提及，但为关键特性）。
+        - “定位”指 `position` 属性值为 `relative`、`absolute`、`fixed` 中的任意一种。
+
+        1.7 固定定位 fixed（重要）
+        定义
+        固定定位使元素固定在浏览器可视区内的指定位置，页面滚动时元素位置不变。
+        css
+        复制
+        选择器 {
+        position: fixed;
+        }
+        以浏览器可视窗口为参照点定位元素。
+        与父元素无关，不随滚动条滚动。
+        脱离文档流（脱标）
+        固定定位后元素不再占据原有位置，后续元素会填充其原位置空间。
+        可视为一种特殊的绝对定位（无父级定位约束）。
+        应用场景
+        适用于需固定在页面的元素（如导航栏、侧边栏、悬浮按钮等）。
+
+        1.7 固定定位 fixed（补充技巧）
+        目标
+        将固定定位元素精准对齐至版心右侧。
+        水平居中基准定位
+        复制
+        left: 50%;
+        将元素的左边缘移动至浏览器可视区（或版心）的水平中线位置。
+        右移版心一半宽度
+        css
+        复制
+        margin-left: 版心宽度的一半;
+        通过 margin-left 将元素向右额外移动版心宽度的一半，使元素右侧与版心右侧对齐。
+        示例说明
+        若版心宽度为 1200px：
+        css
+        复制
+        .box {
+        position: fixed;
+        left: 50%;
+        margin-left: 600px; /* 1200px / 2 */
+        }
+        最终效果：元素右侧紧贴版心右侧边缘。
+        注意事项
+        需确保版心宽度与浏览器窗口布局匹配，或通过 JavaScript/响应式设计动态计算值。
+        固定定位元素脱离文档流，不影响其他元素布局。
+
+        1.8 粘性定位 sticky（了解）
+        定义
+        粘性定位结合了相对定位与固定定位的特点：元素在滚动到阈值前保持相对定位，滚动到阈值后切换为固定定位
+        css
+        复制
+        选择器 {
+        position: sticky;
+        top: 10px; /* 必须指定至少一个方向属性（top/left/right/bottom） */
+        }
+        .js {
+        position:sticky;
+        top: 0;
+        width: 800px;
+        height: 100px;
+        background-color: aqua;
+        margin:100px auto;
+        }
+        核心特点
+        混合定位特性
+        相对定位阶段：元素未达到阈值时，保留原有位置（不脱离文档流）。
+        固定定位阶段：滚动至阈值（如 top: 10px）后，元素固定于可视窗口指定位置。
+        参照基准
+        固定阶段以浏览器可视窗口为参照点，类似固定定位。 依赖方向属性
+        必须至少指定一个方向属性（如 top, left）以触发粘性行为。
+        应用场景
+        滚动时吸顶的导航栏或表头。侧边栏部分内容动态固定。
+
+        1.10 定位叠放次序 z-index
+        定义
+        通过 z-index 属性控制定位元素在垂直方向（Z轴）的层叠顺序，解决元素重叠时的显示优先级问题。
+        css
+        复制
+        选择器 {
+        z-index: 数值;
+        }
+        允许值：正整数、负整数、0，默认值为 auto。
+        数值越大，元素越靠前（优先显示）。
+        相同数值处理
+        若多个元素的 z-index 值相同，按 HTML 书写顺序 层叠，后定义的元素覆盖先定义的元素（后来居上）。
+        数后不能添加单位（如 px, em），直接使用整数。
+        适用范围
+        仅对定位元素生效：需设置 position 属性为 relative、absolute、fixed 或 sticky
+        非定位元素（position: static）的 z-index 无效。
+        .box1 {
+        position: absolute;
+        z-index: 2;
+        }
+        .box2 {
+        position: absolute;
+        z-index: 1;
+        }
+        效果：box1 会覆盖 box2。
+        注意事项
+        默认值与继承
+        未显式设置 z-index 时，默认值为 auto（与父容器层级一致）。
+        子元素的 z-index 仅在父容器层级内生效，无法超越父容器的层级。
+        负值使用
+        负值会使元素置于常规文档流下方，可能被背景或非定位内容遮挡。
+        器兼容性
+        主流浏览器均支持，但需确保元素已正确定位。
+        性能影响过度使用高 z-index 值可能导致渲染性能问题，建议合理规划层级范围（如 0-100）。
+        
+        绝对定位盒子居中算法
+        .box {
+        position: absolute;
+        width: 200px
+        height: 100px
+        left: 50%; /* 将元素左边缘定位到父容器宽度的50%位置 */
+        top: 50%;
+        height: 100px;
+        margin-top: -50px;
+        margin-left: -100px; /* 向左移动元素自身宽度的一半（假设元素宽度为200px） */
+        }
+        1.11 定位的拓展：绝对定位与浮动元素的覆盖行为对比
+        核心差异
+        浮动元素（Float）
+        覆盖范围：仅压住下方标准流中的 盒子（块级元素）。
+        文字/图片处理：不会压住标准流盒子内的文字或图片，文字会环绕浮动元素排列。
+        设计目的：实现图文混排（如文字环绕图片效果）。
+        绝对定位（Absolute）/固定定位（Fixed）
+        覆盖范围：完全压住下方标准流中的所有内容，包括 盒子、文字、图片。
+        脱离文档流：元素脱离正常布局，层级由 z-index 控制，直接覆盖下方内容。
+
+        
+        网页布局通过 盒子模型 实现，大部分 HTML 元素本质上都是盒子。结合 标准流、浮动 和 定位 三种布局方式，可构建完整的页面结构，每种方式有特定的应用场景。
+        （Normal Flow）
+        核心功能
+        默认的文档流布局，控制盒子的垂直或水平排列
+        块级元素默认上下排列，行内元素水平排列。
+        适用场
+        需要垂直排列的块级元素（如段落、标题）。
+        基础页面结的搭建（如头部、主体、底部）。
+        2. 浮动（Float）
+        使多个块级元素水平排列或对齐。
+        脱离标准流，但保留部分空间占用（文字环绕效果）。
+        多列布局（如导航栏、图文混排）。
+        水平对齐的模块（如商品列表、卡片式设计）。
+        3. 定位（Positioning）
+        核心功
+        通过层叠（Z轴）控制盒子的前后覆盖关系。
+        允许元素在容器内自由移动（如绝对定位、固定定位）。
+        适用场景
+        需要精确控制位置的元素（如悬浮按钮、模态框）。
+        层叠效果（如轮播图、下拉菜单）。
+        三者的协同关系
+        标准流：构建页面基础框架，定义垂直或简单水平布局。
+        浮动：补充水平排列需求，实现复杂多列结构。
+        定位：处理特殊交互或层级需求，覆盖或叠加元素。
+        示例流程：
+        用标准流布局页面整体结构（如头部、内容区、侧边栏）。
+        用浮动实现侧边栏与主内容区的水平排列。
+        用定位固定导航栏或添加悬浮提示框。
+        注意事项
+        避免滥用浮动：浮动可能导致父容器高度塌陷，需配合 clearfix 清除浮动。
+        定位层级管理：使用 z-index 控制层叠顺序，避免元素意外覆盖。
+        响应式适配：结合 Flexbox 或 Grid 布局优化多设备兼容性。
+
+        visibility 属性作用
+        控制元素的可见性，可选值：
+        visibility: visible：元素可见（默认）。
+        visibility: hidden：元素隐藏，但仍占据原有位置。
+
+        overflow 溢出属性
+        用于控制内容超出容器尺寸时的处理方式，可选值及描述：
+        visible：内容不裁剪，直接显示溢出部分。
+        hidden：隐藏超出容器的内容，不显示滚动条。
+        scroll：始终显示滚动条（无论内容是否溢出）。
+        auto：自动判断，仅在溢出时显示滚动条。
+        使用建议与注意事项
+        通常建议隐藏溢出内容（如 overflow: hidden 或 auto），避免破坏页面布局。
+        慎用场景：对定位元素（如绝对定位的盒子）使用 overflow: hidden 可能导致内容被意外裁剪，需谨慎处理
+        
+        1.2 精灵图的使用
+        使用精灵图核心总结：
+        精灵图主要针对于小的背景图片使用。
+        主要借助于背景位置来实现——background-position。
+        一般情况下精灵图都是负值。（注意网页中的坐标：x轴向右走为正值，向左走为负值；y轴同理。）
+        提取内容已去除 Markdown 格式，保留原文结构和关键信息。。
+
+        css三角
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-bottom-color: pink;
+
+        4.1 鼠标样式 cursor
+        CSS 示例：
+        li {cursor: pointer; }
+        功能描述：设置或检索在对象上移动的鼠标指针采用何种系统预定义的光标形状
+        default 小白（默认样式）
+        pointer 手型（链接指示）
+        move 移动（拖拽指示）
+        text 文本输入（I型光标）
+        not-allowed 禁止操作（带禁止符号）
+
+        轮廓线 outline
+        功能描述：移除表单元素的默认蓝色边框。
+        
+        input, textarea {
+        outline: 0; /* 或 outline: none; */
+        }
+        4.3 防止拖拽文本域 resize
+        功能描述：禁止用户拖拽调整文本域（textarea）的大小。
+        textarea {
+        resize: none;
+        }
+        5. vertical-align 属性应用
+        CSS 的 vertical-align 属性使用场景：
+        经常用于设置图片或表单（行内块元素）和文字的垂直对齐。
+        官方解释：
+        用于设置一个元素的垂直对齐方式，但只对行内元素或行内块元素有效。
+        vertical-align: baseline | top | middle | bottom;
+        属性值对照表：
+        baseline 默认。元素放置在父元素的基线上。
+        top 把元素的顶端与行中最高元素的顶端对齐。
+        middle 把此元素放置在父元素的中部。
+        bottom 把元素的顶端与行中最低元素的顶端对齐。
+
+        5.2 解决图片底部默认空白缝隙问题
+        问题描述：
+        图片底侧会出现空白缝隙，原因是行内块元素默认与文字的基线对齐。
+        解决方法：
+        修改垂直对齐方式（推荐使用）：
+        为图片添加以下属性之一
+        vertical-align: middle | top | bottom;
+
+        单行文字溢出处省略
+        /*文字显示不开强制在一行*/
+        white-space: nowrap;
+        /*把溢出的部分隐藏起来*/
+        overflow: hidden;
+        /*文字超出的部分使用省略号代替*/
+        text-overflow: ellipsis;
+
+        css
+        复制
+        text-overflow: ellipsis;
+        /* 弹性伸缩盒子模型显示 */
+        display: -webkit-box;
+        /* 限制在一个块元素显示的文本的行数 */
+        -webkit-line-clamp: 2;
+        /* 设置或检索伸缩盒对象的子元素的排列方式 */
+        -webkit-box-orient: vertical;
+        关键点说明：
+        text-overflow: ellipsis;
+        当文本超出容器时，用省略号（…）表示被截断的内容。
+        display: -webkit-box;
+        使用旧版弹性盒子布局（WebKit内核浏览器兼容写法）。
+        -webkit-line-clamp: 2;
+        限制文本最多显示2行，超出部分隐藏并显示省略号。
+        -webkit-box-orient: vertical;
+        设置弹性盒子的子元素垂直排列（配合line-clamp生效）。
+
+        . 让每个盒子 margin 往左侧移动 -1px 正好压住相邻盒子边框”
+        这段代码描述的是通过设置负值的 margin-left（如 margin-left: -1px;）让相邻的盒子（元素）重叠，
+        通常用于消除边框重叠时的双边框问题（例如，1px + 1px = 2px 边框会变成视觉上的 1px）。
+        .box {
+        border: 1px solid #000;
+        margin-left: -1px; /* 向左移动1px，覆盖相邻盒子的边框 *
+        这段代码描述的是通过 :hover 交互效果提升元素的层级，使其在视觉上突出显示。具体逻辑分为两步：
+        若元素无定位：添加 position: relative（相对定位，不脱离文档流）。
+        若已有定位（如 absolute/fixed/relative）：直接增加 z-index。
+
+        文字围绕浮动元素
+        <div class="box">
+            <div class="box1">
+                需要再.box1加上浮动就可以了
+            </div>
+            画江湖之不良人
+
+            css巧用三角形
+            .box {
+            width: 0;
+            height: 0;
+            border-color: transparent red transparent transparent;
+            border-style: solid;
+            border-width: 100px 50px 0 0;
+            }
+
+            <video width="320" height="240" controls>
+                <source src="video.mp4" type="video/mp4">
+                您的浏览器不支持视频播放。
+            </video>
+
+            <video src="promo.mp4" width="800" height="450" 
+            controls autoplay muted loop poster="preview.jpg" preload="auto">
+                您的浏览器不支持HTML5视频标签
+            </video>
+            autoplay
+            视频就绪自动播放
+            注意：谷歌浏览器需要添加 muted 来解决自动播放问题
+            controls
+            向用显示播放控件
+            width
+            设置播放器宽度（像素值）
+            height
+            设置播放器高度（像素值）
+            loop
+            播放完是否继续播放该视频，循环播放
+            preload
+            规定是否预加载视频
+            auto：预先加载视频
+            none：不应加载视频
+            注意：如果有 autoplay 就忽略该属性
+            src
+            视频url地址
+            poster
+            加载等待的画面图片（封面图）
+            muted
+            静音播放
+
+            属性 值/类型 描述
+            autoplay autoplay 如果出现该属性，则音频在就绪后马上播放
+            controls controls 如果出现该属性，则向用户显示控件，比如播放按钮
+            loop loop 如果出现该属性，则每当音频结束时重新开始播放
+            src url 要播放的音频的 URL
+            <audio controls autoplay muted loop src="music.mp3">
+                您的浏览器不支持HTML5音频标签
+            </audio>
+
+            1.4 HTML5 新增的表单属性
+            属性 值/取值 说明
+            required required 表示该表单字段内容不能为空，为必填项。
+            placeholder 提示文本 显示表单字段的提示信息，当存在默认值或用户输入内容时，提示信息会自动消失。
+            autofocus autofocus 页面加载完成后，自动将焦点定位到指定表单字段。
+            autocomplete on / off 控制浏览器是否根据用户历史输入自动填充表单字段。默认值为on，设为off时需要满足以下条件：
+            1. 属性需放在表单内；
+            2. 字段需有name属性；
+            3. 表单需成功提交过。
+            multiple multiple 允许用户通过文件上传表单字段一次选择多个文件（如<input type="file">）。
+            关键特性说明：
+            required：强制验证字段非空，适用于文本输入、单选按钮等。
+            placeholder：仅用于提示，不可替代value属性。
+            autofocus：一个页面中建议仅有一个表单字段使用此属性。
+            autocomplete：需结合name属性使用，关闭后浏览器不再记录输入历史。
+            multiple：常用于文件上传或下拉多选（如<select multiple>）。
+            <input type="search" required="required" placeholder="111" autofocus="autofocus" name="sear">
+            文段不为空 默认信息是111 -->
+<!--
+            <input type="file" multiple="multiple">
+            多个文件提交
+            <style>
+                css新增选择器,
+                属性选择器 input[value] {
+                    color: aqua;
+                }
+                权重1 + 10 = 11
+                input[type=text] {
+                    color: red;
+                }
+            
+                /*先选择div 在class 并且是in开头的所以元素*/
+                div[class^=in] {
+                    color: aqua;
+                }
+            
+                /*先选择div 在class 并且是data结尾的所以元素*/
+                section[class$=data] {
+                    color: chartreuse;
+                }
+            
+                /*先选择div 在class 并且是含有n的所以元素*/
+                div[class*=n] {
+                    background-color: blue;
+                }
+            </style>
+            
+            <input type="text" value="11111">
+            <input type="text">
+            属性选择器可以选择某些属性=值的某些元素 重点
+            <input type="text" value="11111">
+            <input type="password" value="11111">
+            <div class="in1">1111111</div>
+            <div class="in2">1111111</div>
+            <div class="in3">1111111</div>
+            <div class="in4">1111111</div>
+            <section class="in1-data">11111111</section>
+            <section class="in2-data">11111111</section>
+
+            :first-child：选择父元素的第一个子元素，且该元素必须与选择器指定的类型匹配。
+            :first-of-type：选择父元素下某一类型的第一个元素，无论前面是否有其他类型的元素。
+            CSS 选择器 :nth-child 与 :nth-of-type 的区别
+            代码示例：
+            css
+            复制
+            /* nth-child 会遍历父元素下所有子元素进行序号排列 */
+            /* 匹配逻辑：先找到父元素的第一个子元素，再检查是否为 div */
+            section div:nth-child(1) {
+            background-color: red;
+            }
+            /* nth-of-type 仅遍历指定类型的子元素进行序号排列 */
+            /* 匹配逻辑：先筛选父元素下的所有 div，再选择第一个 div */
+            section div:nth-of-type(1) {
+            background-color: blue;
+            }
+            /*选择ul的第一个li*/
+            ul li:first-child {
+            color:aqua;
+            }
+            /*选择ul的最后li*/
+            ul li:last-child {
+            color: red;
+            }
+            /*选择ul的第三li*/
+            ul li:nth-child(3)
+            {
+            background-color: antiquewhite;
+            }
+            /*选择ul的偶数li*/
+            ul li:nth-child(even)
+            {
+            background-color: red;
+            }
+            /*选择ul的奇数li*/
+            ul li:nth-child(odd)
+            {
+            background-color:black;
+            }
+            /*nth-child(n)从0开始 每次加一 往后计算 这里必须是n*/
+            /*也可以是2n 2n+1*/
+            ul li:nth-child(n)
+            {
+            background-color:green;
+            }
+            section div:first-of-type {
+            background-color: aqua;
+            }
+
+            ::after在元素内部后面插入内容
+            div::after {
+            /*这个必须写*/
+            display: block;
+            content: '<'; margin-top: 5px;
+             }
+             ::before在元素内部前面插入内容 
+             div::before { /*这个必须写*/ content: '我' ; 
+             }
+
+            box-sizing: border-box;
+            div {
+                width: 200px;
+                padding: 10px;
+                border: 5px solid black;
+                box-sizing: border-box;
+                }
+            实际宽度：固定为 200px，内容区域宽度为 200 - 10*2 - 5*2 = 170px。
+
+            img {
+            filter:blur(5px);
+            /*数值越大图像越模糊*/
+
+            以下两行 CSS 代码用于动态计算元素的宽度和高度
+            width: calc(100% - 30px);
+            height: calc(100% - 30px);
+
+            width: calc(100% - 30px)
+            元素的宽度为父元素宽度的 100%，减去 30px。
+            height: calc(100% - 30px)
+            元素的高度为父元素高度的 100%，减去 30px。
+
+             css3过度(重点)那个做过度给那个加
+            div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /*transition: 变化的属性 花费的时间 运动曲线 何时开始*/
+            /*多个值的改写，使用逗号分开*/
+            transition: width .5s ease 1s,height .5s ease 1s;
+            /*如果要写多个属性直接使用all*/
+            transition: all 0.5s;
+            }    
+            div:hover {
+            width: 400px;
+            height: 400px;
+            background-color: aqua;
+            }
+
+             }
+            -->
+布局原理 flex 是 flexible Box
+容器属性（作用于父元素）
+属性 作用 常用值 示例代码
+flex-direction 定义主轴方向 row（默认横向）
+row-reverse（反向横向）
+column（纵向）
+column-reverse（反向纵向）
+css
+.container {
+display: flex;
+flex-direction: column; /* 纵向排列 */
+}
+``` |
+| **`justify-content`** | 主轴对齐方式 |
+`flex-start`（左对齐）<br>`flex-end`（右对齐）<br>`center`（居中）<br>`space-between`（两端对齐）<br>`space-around`（均匀分布） |
+```css
+.container {
+justify-content: space-between; /* 两端对齐 */
+}
+``` |
+| **`flex-wrap`** | 是否换行 | `nowrap`（不换行）<br>`wrap`（换行）<br>`wrap-reverse`（反向换行） |
+```css
+.container {
+flex-wrap: wrap; /* 自动换行 */
+}
+``` |
+| **`align-content`** | 多行项目的交叉轴对齐 | `stretch`（默认拉伸）<br>`center`（居中）<br>`space-between`（两端对齐） |
+```css
+.container {
+align-content: center; /* 多行垂直居中 */
+}
+``` |
+| **`align-items`** | 单行项目的交叉轴对齐 | `stretch`（默认拉伸）<br>`flex-start`（顶部对齐）<br>`center`（居中） |
+```css
+.container {
+align-items: center; /* 单行垂直居中 */
+}
+``` |
+
+---
+
+#### **项目属性**（作用于子元素）
+
+| 属性 | 作用 | 常用值 | 示例代码 |
+|------|------|--------|----------|
+| **`flex`** | 简写：`flex-grow` + `flex-shrink` + `flex-basis` | `flex: 1`（等价于 `1 1 0`）<br>`flex: 0 0
+200px`（固定宽度）<br>`flex: 2`（占双倍空间） |
+```css
+.item {
+flex: 1 0 auto; /* 可放大，不缩小 */
+}
+``` |
+| **`align-self`** | 覆盖父容器的 `align-items` 对齐方式 | `auto`（继承父容器）<br>`flex-start`（顶部对齐）<br>`center`（居中） |
+```css
+.item-special {
+align-self: flex-end; /* 单独底部对齐 */
+}
+``` |
+
+---
+
+### **综合案例**
+
+#### 案例 1：导航栏布局（容器属性）
+```html
+<nav class="navbar">
+    <div>首页</div>
+    <div>产品</div>
+    <div class="login">登录</div>
+</nav>
+css
+.navbar {
+display: flex;
+justify-content: space-between; /* 左右贴边 */
+align-items: center;
+padding: 10px;
+background: #333;
+color: white;
+}
+.login {
+margin-left: auto; /* 右侧对齐（替代方案） */
+}
+案例 2：动态伸缩布局（项目属性）
+html
+<div class="container">
+    <div class="item1">1份空间</div>
+    <div class="item2">2份空间</div>
+</div>
+css
+.container {
+display: flex;
+gap: 10px;
+}
+.item1 {
+flex: 1; /* 占1份剩余空间 */
+}
+.item2 {
+flex: 2; /* 占2份剩余空间 */
+}
+案例 3：覆盖对齐（align-self）
+html
+<div class="container">
+    <div class="box">普通项</div>
+    <div class="box special">底部对齐项</div>
+</div>
+css
+.container {
+display: flex;
+height: 200px;
+align-items: center; /* 默认居中 */
+}
+.special {
+align-self: flex-end; /* 覆盖为底部对齐 */
+}
+注意事项
+flex 简写规则：
+
+flex: 1 → flex: 1 1 0
+
+flex: none → flex: 0 0 auto
+
+默认行为：
+
+项目默认不放大（flex-grow: 0），但会缩小（flex-shrink: 1）。
+
+对齐优先级：
+
+align-self > align-items（容器级）。

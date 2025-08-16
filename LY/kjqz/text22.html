@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 设置字符编码为 UTF-8，确保网页能正确显示各种字符 -->
+    <meta charset="UTF-8">
+    <!-- 设置视口，使网页在不同设备上能正确显示和缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 创建一个空的段落元素，后续用于显示数据 -->
+    <p></p>
+    <!-- 引入 axios 库，虽然在本代码中未充分体现其功能，但可能为后续扩展做准备 -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        // 创建一个 Promise 对象，Promise 用于处理异步操作的结果
+        const p = new Promise((resolve, reject) => {
+            // 创建 XMLHttpRequest 对象，用于发起 HTTP 请求
+            const xhr = new XMLHttpRequest();
+            // 配置请求方法为 GET，并指定请求的 URL
+            xhr.open('GET', 'http://hmajax.itheima.net/api/province');
+            // 监听 loadend 事件，当请求完成（无论成功还是失败）时触发
+            xhr.addEventListener('loadend', () => {
+                // 判断请求的状态码，200 到 299 之间表示请求成功
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    // 将服务器返回的响应数据解析为 JavaScript 对象，并调用 resolve 函数传递解析后的数据
+                    resolve(JSON.parse(xhr.response));
+                } else {
+                    // 如果请求失败，创建一个 Error 对象，并调用 reject 函数传递错误信息
+                    reject(new Error(xhr.response));
+                }
+            });
+            // 发送 HTTP 请求
+            xhr.send();
+        });
+        // 调用 then 方法处理 Promise 成功的情况
+        p.then(result => {
+            // 将获取到的数据中的 list 数组元素用 <br> 连接成字符串，并打印到控制台
+            console.log(result.list.join('<br>'));
+            // 将连接后的字符串设置为页面中 p 元素的内容，用于显示数据
+            document.querySelector('p').innerHTML = result.list.join('<br>');
+        }).catch(Error => {
+            // 处理 Promise 失败的情况，使用 console.dir 打印错误对象
+            console.dir(Error.message);
+            // 将错误信息设置为页面中 p 元素的内容，用于显示错误
+            document.querySelector('p').innerHTML = Error.message;
+        });
+    </script>
+</body>
+
+</html>

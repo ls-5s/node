@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>核心功能展示</title>
+  <style>
+    /* 容器样式 */
+    .feature-container {
+      max-width: 768px;      /* 限制宽度，适配不同设备 */
+      margin: 40px auto;    /* 水平居中 */
+      padding: 0 16px;       /* 两侧留白 */
+      font-family: "Microsoft YaHei", Arial, sans-serif; /* 中文友好字体 */
+      color: #333;          /* 主文字色 */
+      line-height: 1.6;     /* 全局行高优化 */
+    }
+
+    /* 主标题（核心功能） */
+    .feature-heading {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      padding-left: 8px;
+      border-left: 4px solid #4CAF50; /* 绿色竖线强调 */
+    }
+
+    /* 子标题（如“1. 任务管理”） */
+    .feature-subheading {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 20px 0 8px;
+      color: #444; /* 层次区分 */
+    }
+
+    /* 任务列表容器 */
+    .task-list {
+      list-style: none;     /* 隐藏默认圆点 */
+      padding-left: 28px;   /* 给自定义标记留空间 */
+      margin: 0;            /* 清除默认边距 */
+    }
+
+    /* 任务项基础样式 */
+    .task-item {
+      position: relative;   /* 伪元素定位基准 */
+      margin: 8px 0;
+      padding-left: 20px;   /* 避开自定义标记 */
+      transition: background 0.3s; /* 过渡动画 */
+    }
+
+    /* 已完成任务的标记（绿色对勾） */
+    .task-item.completed::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 14px;
+      background-color: #4CAF50; /* 绿色 */
+      border-radius: 3px;        /* 圆角 */
+    }
+    .task-item.completed::after {
+      content: "";
+      position: absolute;
+      left: 3px;
+      top: 50%;
+      transform: translateY(-60%) rotate(45deg); /* 对勾角度 */
+      width: 6px;
+      height: 10px;
+      border-right: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+    }
+
+    /* 未完成任务的标记（灰色占位） */
+    .task-item.pending::before {
+      background-color: #ccc; /* 灰色 */
+      border: 1px solid #999;
+    }
+    .task-item.pending::after {
+      display: none; /* 隐藏对勾 */
+    }
+
+    /* 交互优化：悬停高亮 */
+    .task-item:hover {
+      background-color: #f8f8f8;
+    }
+  </style>
+</head>
+<body>
+  <div class="feature-container">
+    <h2 class="feature-heading">核心功能（必做）</h2>
+
+    <!-- 任务管理模块 -->
+    <div class="feature-group">
+      <h3 class="feature-subheading">1. 任务管理</h3>
+      <ul class="task-list">
+        <li class="task-item completed">创建新任务</li>
+        <li class="task-item completed">查看任务列表</li>
+        <li class="task-item completed">标记任务完成/未完成</li>
+        <li class="task-item completed">删除任务</li>
+      </ul>
+    </div>
+
+    <!-- 数据持久化模块（可扩展子项） -->
+    <div class="feature-group">
+      <h3 class="feature-subheading">2. 数据持久化</h3>
+      <!-- 示例：若有子功能，可添加下面的列表 
+      <ul class="task-list">
+        <li class="task-item pending">待实现功能A</li>
+        <li class="task-item completed">已实现功能B</li>
+      </ul>
+      -->
+    </div>
+  </div>
+</body>
+</html>

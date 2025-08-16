@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 设置字符编码为 UTF-8，确保页面能正确显示各种语言字符 -->
+    <meta charset="UTF-8">
+    <!-- 确保页面在不同设备上能正确显示，宽度根据设备屏幕宽度调整，初始缩放比例为 1.0 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 设置页面标题，会显示在浏览器标签上 -->
+    <title>Document</title>
+    <style>
+        /* 定义模态框的整体样式 */
+        .Modal {
+            /* 固定定位，使模态框相对于浏览器窗口固定，不随页面滚动而移动 */
+            position: fixed;
+            /* 垂直方向上，将模态框顶部置于页面 50% 处，为后续居中做准备 */
+            top: 50%;
+            /* 水平方向上，将模态框左侧置于页面 50% 处，为后续居中做准备 */
+            left: 50%;
+            /* 平移变换，将模态框向上和向左各移动自身一半的宽度和高度，实现完全居中 */
+            transform: translate(-50%, -50%);
+            /* 模态框背景颜色设为白色 */
+            background-color: white;
+            /* 为模态框添加 1 像素宽的浅灰色边框 */
+            border: 1px solid #ccc;
+            /* 模态框内部内容与边框的间距为 20 像素 */
+            padding: 20px;
+            /* 添加阴影效果，增强模态框的立体感和视觉突出感 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            /* 设置模态框的层级为 1000，确保它显示在其他元素之上 */
+            z-index: 1000;
+            /* 模态框宽度设为 300 像素，可根据需求调整 */
+            width: 300px;
+        }
+
+        /* 定义模态框头部区域的样式 */
+        .Modal .header {
+            /* 头部文字设为粗体 */
+            font-weight: bold;
+            /* 头部下方与其他内容的间距为 10 像素 */
+            margin-bottom: 10px;
+            /* 相对定位，为内部的关闭按钮（绝对定位）提供参考基准 */
+            position: relative;
+            /* 头部文字水平居中显示 */
+            text-align: center;
+        }
+
+        /* 定义模态框头部关闭按钮（i 标签）的样式 */
+        .Modal .header i {
+            /* 绝对定位，使关闭按钮相对于头部区域定位 */
+            position: absolute;
+            /* 关闭按钮顶部与头部顶部对齐 */
+            top: 0;
+            /* 关闭按钮右侧与头部右侧对齐 */
+            right: 0;
+            /* 鼠标悬停时，指针变为手型，提示用户该元素可点击交互 */
+            cursor: pointer;
+        }
+
+        /* 定义模态框主体内容区域的样式 */
+        .Modal .body {
+            /* 主体内容文字颜色设为深灰色 */
+            color: #333;
+            /* 主体内容文字水平居中显示 */
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 创建一个 id 为 delete 的按钮，内容为“删除”，点击后触发无删除权限的模态框提示 -->
+    <button id="delete">删除</button>
+    <!-- 创建一个 id 为 login 的按钮，内容为“登录”，点击后触发未注册提示的模态框 -->
+    <button id="login">登录</button>
+    <!-- 注释掉的模态框 HTML 结构，可作为模态框布局的参考示例 -->
+    <!-- <div class="Modal">
+        <div class="header">
+            “温馨提示”
+            <i>X</i>
+        </div>
+        <div class="body">您没有删除权限操作</div>
+    </div> -->
+    <script>
+        // 定义 Modal 构造函数，用于创建模态框实例，接收标题（title）和内容（message）参数
+        function Modal(title = '', message = '') {
+            // 创建一个新的 div 元素，作为模态框的容器
+            this.modalBox = document.createElement('div');
+            // 为模态框容器添加类名 'Modal'，以便应用 CSS 中定义的样式
+            this.modalBox.className = 'Modal';
+            // 设置模态框的内部 HTML 结构，插入标题和内容，其中标题和内容通过构造函数参数动态传入
+            this.modalBox.innerHTML = `
+                <div class="header">${title} <i>X</i></div>
+                <div class="body">${message}</div>
+            `;
+            // 在控制台打印模态框元素，用于调试和查看结构
+            console.log(this.modalBox);
+        }
+
+        // 为 Modal 原型添加 open 方法，用于打开并显示模态框
+        Modal.prototype.open = function () {
+            // 查找页面中已有的.Modal 元素（若有），并将其从页面移除，避免重复显示
+            const box = document.querySelector('.Modal');
+            box && box.remove();
+            // 将当前模态框添加到页面的 body 元素中，使其显示出来
+            document.body.append(this.modalBox);
+            // 查找页面中的第一个 i 标签（预期是模态框头部的关闭按钮）
+            const i = document.querySelector('i');
+            // 为关闭按钮添加点击事件监听器
+            i.addEventListener('click', () => {
+                // 点击关闭按钮时，调用模态框的 close 方法关闭模态框
+                this.close();
+            });
+        };
+
+        // 为 Modal 原型添加 close 方法，用于关闭并移除模态框
+        Modal.prototype.close = function () {
+            // 将模态框从页面中移除，实现关闭效果
+            this.modalBox.remove();
+        };
+
+        // 通过 id 选择器获取页面中的删除按钮元素
+        const deleted = document.querySelector('#delete');
+        // 为删除按钮添加点击事件监听器
+        deleted.addEventListener('click', () => {
+            // 点击删除按钮时，创建一个新的模态框实例，标题为“温馨提示”，内容为“您没有删除权限操作”
+            const del = new Modal('温馨提示', '您没有删除权限操作');
+            // 调用模态框的 open 方法，将其显示在页面上
+            del.open();
+        });
+
+        // 通过 id 选择器获取页面中的登录按钮元素
+        const login = document.querySelector('#login');
+        // 为登录按钮添加点击事件监听器
+        login.addEventListener('click', () => {
+            // 点击登录按钮时，创建一个新的模态框实例，标题为“友情提示”，内容为“您没有注册呢？”
+            const del = new Modal('友情提示', '您没有注册呢？');
+            // 调用模态框的 open 方法，将其显示在页面上
+            del.open();
+        });
+    </script>
+</body>
+
+</html>
