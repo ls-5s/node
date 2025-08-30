@@ -1,0 +1,10 @@
+<!-- 页面的 .wxml 结构 -->
+<view>{{numA}} + {{numB}} = {{sum}}</view>
+
+<van-button type="primary" bindtap="btnHandler1" data-step="{{1}}">
+  numA + 1
+</van-button>
+
+<van-button type="danger" bindtap="btnHandler1" data-step="{{-1}}">
+  numA - 1
+</van-button>
