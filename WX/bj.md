@@ -1462,3 +1462,94 @@ Page({
 
 
 # uniapp
+## uni-app和原生小程序开发的区别
+uni - app 和原生小程序开发区别
+每个页面是一个.vue 文件，数据绑定及事件处理同 Vue.js 规范：
+1. 属性绑定：`src="{{ url }}"` 升级成 `:src="url"`
+2. 事件绑定：`bindtap="eventName"` 升级成 `@tap="eventName"`，支持（）传参
+3. 支持 Vue 常用指令：v - for、v - if、v - show、v - model 等
+温馨提示：调用接口能力，建议前缀 wx 替换为 uni，养成好习惯，这样支持多端开发。
+
+## 怎么创建一个uniapp
+通过 HBuilderX 创建
+### 通过命令行创建
+vue3 + ts 版：
+```
+npx degit dcloudio/uni-preset-vue#vite-ts 项目名称
+```
+官网链接：
+```
+https://uniapp.dcloud.net.cn/quickstart-cli.html#创建 uni-app
+```
+编译和运行 uni - app 项目：
+1. `npx degit xxx` 创建项目
+2. 在 `manifest.json` 中添加 `appid`
+3. 运行项目
+前置配置：在 manifest.json 中添加微信小程序的 appid。
+执行步骤：
+执行 pnpm install 安装依赖；
+执行 pnpm dev:mp-weixin 启动微信小程序开发模式的服务；
+将生成的项目导入微信开发者工具。
+
+- **TypeScript 类型校验相关流程与配置**：
+  1. 步骤拆分：需先「安装类型声明文件」，再「配置 `tsconfig.json`」。
+  2. 安装命令：`pnpm i -D @types/wechat-miniprogram @uni-helper/uni-app-types`（安装微信小程序、uni-app 的 TypeScript 类型声明依赖）。
+  3. `tsconfig.json` 配置：
+     - 在 `compilerOptions.types` 中添加类型声明包：`"@dcloudio/types"`、`"@types/wechat-miniprogram"`、`"@uni-helper/uni-app-types"`。
+     - 新增 `vueCompilerOptions` 配置，设置 `experimentalRuntimeMode: "runtime-uni-app"`（适配 uni-app 运行时）。
+- 额外提及：存在“json 注释问题”相关点（图中左下角标注，未展开细节）。
+  
+### uni-ui 组件库
+#### 链接
+
+https://uniapp.dcloud.net.cn/component/uniui/quickstart.html
+#### 安装 uni-ui 组件库
+uni-ui 是 uni-app 官方提供的组件库，包含了丰富的组件，如按钮、输入框、列表等。
+安装 uni-ui 组件库：
+```
+pnpm i @dcloudio/uni-ui 
+```
+#### 配置easycom
+
+使用 npm 安装好 uni-ui 之后，需要配置 easycom 规则，让 npm 安装的组件支持 easycom
+
+打开项目根目录下的 pages.json 并添加 easycom 节点：
+```json
+// pages.json
+{
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			// uni-ui 规则如下配置
+			"^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
+		}
+	},
+	
+	// 其他内容
+	pages:[
+		// ...
+	]
+}
+```
+#### 准备 sass
+
+vue-cli 项目请先安装 sass 及 sass-loader，如在 HBuliderX 中使用，可跳过此步。
+
+安装 sass
+```
+ npm i sass -D   或   yarn add sass -D  
+```
+复制代码
+安装 sass-loader
+```
+npm i sass-loader@10.1.1 -D   或   yarn add sass-loader@10.1.1 -D
+```
+复制代码
+如果 node 版本小于 16 ，sass-loader 请使用低于 @11.0.0 的版本，sass-loader@11.0.0 不支持 vue@2.6.12  如果 node 版本大于 16 ， sass-loader 建议使用 v8.x 版本
+#### 使用 uni-ui 组件
+在 template 中使用组件：
+```html
+<uni-badge text="1"></uni-badge>
+<uni-badge text="2" type="success" @click="bindClick"></uni-badge>
+<uni-badge text="3" type="primary" :inverted="true"></uni-badge>
+```
