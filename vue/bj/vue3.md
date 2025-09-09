@@ -4,6 +4,7 @@ npm init vue@latest
 启动
 npm run dev
 ```
+
 ```js
 npm install -g pnpm
 pnpm create vue
