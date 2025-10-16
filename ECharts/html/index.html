@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+    <style>
+        .box {
+            width: 700px;
+            height: 700px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+    <script>
+        // echarts.init() 初始化
+        var myChart = echarts.init(document.querySelector(".box"));
+
+        // 指定图表的配置项和数据
+       option = {
+        //color 设置我们线条的颜色 注意后面是个数组
+           color: ['pink', 'red', 'green', 'skyblue'],
+        // 设置图表的标题
+            title: {
+                text: 'Stacked Line'
+            },
+            // 图表的提示框组件
+            tooltip: {
+                // 触发方式(查配置文档)
+                trigger: 'axis'
+            },
+            // 图例组件
+            legend: {
+                // data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
+               // series 中的 name 会自动生成图例,legend 上面的data 可以删掉
+            },
+            
+           // 网格配置 grid 可以控制线形图 柱状图 图表大小s
+            grid: {
+               left: '5%', // 图表距离容器左侧的距离为 0%
+               right: '4%', // 图表距离容器右侧的距离为 4%
+               bottom: '3%', // 图表距离容器底部的距离为 3%
+               // 是否显示刻度标签 如果是 true 就显示 否则反之
+               containLabel: true // 网格不包含坐标轴的刻度标签，标签可能会超出网格范围true/false
+           },
+            // 工具组件,可以另存为图片等
+            toolbox: {
+                feature: {
+                    saveAsImage: {} // 保存为图片的功能
+                }
+            },
+            xAxis: {
+                type: 'category',// 坐标轴类型为类目轴，适用于离散的类目数据
+                // 是否让我们的线条和坐标轴有缝隙
+                boundaryGap: false,//true是缝隙 false 是没有缝隙
+                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']// x轴的名称
+            },
+            yAxis: {
+                type: 'value'// 坐标轴类型为数值轴，适用于连续的数值数据
+            },
+            // 系列图表配置 它决定着显示那种类型的图表
+            series: [
+               {
+                    name: 'Email',         // 系列名称，用于在图例和提示框中显示
+                    type: 'line',          // 图表类型为折线图
+                    // stack: 'Total',        // (一般不需要)堆叠名称，相同stack值的系列数据会进行堆叠计算
+                    data: [120, 132, 101, 134, 90, 230, 210]  // 该系列的具体数据值数组
+                },
+                {
+                    name: 'Union Ads',
+                    type: 'line',
+                    // stack: 'Total',        // (一般不需要)堆叠名称，相同stack值的系列数据会进行堆叠计算
+                    data: [220, 182, 191, 234, 290, 330, 310]
+                },
+                {
+                    name: 'Video Ads',
+                    type: 'line',
+                    // stack: 'Total',        // (一般不需要)堆叠名称，相同stack值的系列数据会进行堆叠计算
+                    data: [150, 232, 201, 154, 190, 330, 410]
+                },
+                {
+                    name: 'Direct',
+                    type: 'line',
+                    // stack: 'Total',        // (一般不需要)堆叠名称，相同stack值的系列数据会进行堆叠计算
+                    data: [320, 332, 301, 334, 390, 330, 320]
+                },
+                {
+                    name: 'Search Engine',
+                    type: 'line',
+                    // stack: 'Total',
+                    data: [820, 932, 901, 934, 1290, 1330, 1320]
+                }
+            ]
+        };
+        // 使用刚指定的配置项和数据显示图表
+        myChart.setOption(option);
+    </script>
+</body>
+
+</html>

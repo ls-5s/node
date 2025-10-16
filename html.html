@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>响应式导航</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            max-width: 1200px;
+            max-height: 100px;
+            margin: 0 auto;
+            background-color: red;
+        }
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem
+        }
+        li {
+            list-style: none;
+        }
+        @media screen and (max-width: 768px) {
+            ul {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                background-color: pink;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li>首页</li>
+            <li>产品</li>
+            <li>服务</li>
+            <li>关于</li>
+            <li>联系</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

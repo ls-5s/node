@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "forceConsistentCasingInFileNames": true,// 强制文件名大小写一致
+        "module": "CommonJS", // Node.js 常用的模块规范
+        "target": "ES6", // 编译后的 JS 版本
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "strict": true // 严格模式（可选，看需求）
+    },
+    "include": [
+        "**/*.ts"
+    ] // 告诉 TS 要处理哪些文件
+}

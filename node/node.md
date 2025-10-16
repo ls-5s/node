@@ -730,6 +730,11 @@ const expressJWT = require('express-jwt')
 const express = require('express')
 const app = express()
 const secretKey = "YOUR_SECRET_KEY"
+// 1. 配置中间件（全局生效）
+app.use(expressJWT({
+  secret: SECRET_KEY,
+  algorithms: [ALGORITHM]
+}).unless({ path: ['/login'] })); // 排除不需要验证的路径
 
 app.get('/login', (req, res) => {
   //jwt.sign() 方法用于生成 JWT

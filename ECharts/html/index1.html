@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+    <style>
+        .box {
+            /* 使用百分比宽度，相对于父容器宽度的80% */
+            width: 80%;
+            /* 最大宽度限制，防止在超大屏幕上过大 */
+            max-width: 700px;
+            /* 高度使用aspect-ratio保持正方形比例 */
+            aspect-ratio: 1 / 1;
+            background-color: pink;
+            margin: 0 auto;
+            /* 小屏幕时添加内边距，提升移动端体验 */
+            padding: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+    <!-- <script src="../js/index1.js"></script> 直线1
+    <!-- <script src="../js/index.js"></script>/直线-->
+    <!-- <script src="../js/index2.js"></script>折线 -->
+    <script src="../js/index3.js"></script> <!-- 饼图 -->
+
+    <script>
+        // echarts.init() 初始化
+
+    </script>
+</body>
+
+</html>
